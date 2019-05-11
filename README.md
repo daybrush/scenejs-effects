@@ -1,5 +1,5 @@
 # @scenejs/effects [![npm version](https://badge.fury.io/js/%40scenejs%2Feffects.svg)](https://badge.fury.io/js/%40scenejs%2Feffects)
-============ 
+
 
 Effect collection library where you can add scene effects to [**Scene.js**](https://www.npmjs.com/package/scenejs).
 ## Installation
