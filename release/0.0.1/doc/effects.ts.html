@@ -1,4 +1,48 @@
-import { SceneItem, AnimatorState } from "scenejs";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>effects.ts - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/daybrush.css">
+    <link type="text/css" rel="stylesheet" href="styles/custom.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="effects.ts - Documentation"/>
+
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">effects.ts</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { SceneItem, AnimatorState } from "scenejs";
 import { IObject } from "@daybrush/utils";
 import { EffectState } from "./types";
 
@@ -35,11 +79,11 @@ new SceneItem({
 	duration: 2,
 });
  */
-function set(property: string | string[], values: any[], options: Partial<AnimatorState>) {
+function set(property: string | string[], values: any[], options: Partial&lt;AnimatorState>) {
     const item = new SceneItem({}, options);
     const length = values.length;
 
-    for (let i = 0; i < length; ++i) {
+    for (let i = 0; i &lt; length; ++i) {
         item.set(`${i / (length - 1) * 100}%`, property, values[i]);
     }
     return item;
@@ -68,7 +112,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial<EffectState>) {
+export function zoomIn({ from = 0, to = 1 }: Partial&lt;EffectState>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -95,7 +139,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial<EffectState>) {
+export function zoomOut({ from = 1, to = 0 }: Partial&lt;EffectState>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -123,7 +167,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState>) {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial&lt;EffectState>) {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -151,7 +195,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState>) {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial&lt;EffectState>) {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -164,7 +208,7 @@ export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial
  * @param {object} options.from The starting properties of item1 and end properties of item2
  * @param {object} options.to The starting properties of item2 and end properties of item1
  * @param {number} options.duration animation's duration
- * @param {number} [options.time] start time of item1 <br/> <strong>default: item1.getDuration() - duration</strong>
+ * @param {number} [options.time] start time of item1 &lt;br/> &lt;strong>default: item1.getDuration() - duration&lt;/strong>
  * @example
 // import {transition} from "@scenejs/effects";
 transition(item1, item2, {
@@ -200,7 +244,7 @@ export function transition(item1: SceneItem, item2: SceneItem, {
     to,
     duration = item1.getDuration(),
     time = Math.max(item1.getDuration() - duration, 0),
-}: { from: IObject<any>, to: IObject<any>, duration?: number, time?: number }) {
+}: { from: IObject&lt;any>, to: IObject&lt;any>, duration?: number, time?: number }) {
     item1.set({
         [time]: to,
         [time + duration]: from,
@@ -234,7 +278,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial<EffectState>) {
+export function fadeIn({ from = 0, to = 1 }: Partial&lt;EffectState>) {
     return set("opacity", [from, to], arguments[0]);
 }
 
@@ -261,7 +305,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeOut({ from = 1, to = 0 }: Partial<EffectState>) {
+export function fadeOut({ from = 1, to = 0 }: Partial&lt;EffectState>) {
     return set("opacity", [from, to], arguments[0]);
 }
 /**
@@ -290,6 +334,39 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function blink({ from = 0, to = 1 }: Partial<EffectState>) {
+export function blink({ from = 0, to = 1 }: Partial&lt;EffectState>) {
     return set("opacity", [from, to, from], arguments[0]);
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+<style>
+
+
+nav li[file="effects"]:after {
+    display: none;
+}
+nav li[file="effects"] h4, nav li[file="effects"] ul {
+    display: block;
+}
+</style>
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Sun May 12 2019 03:06:02 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/utils.min.js"></script>
+<script src="scripts/search.js"></script>
+</body>
+</html>
