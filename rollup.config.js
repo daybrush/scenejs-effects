@@ -12,13 +12,19 @@ export default builder([
         input: "src/index.umd.ts",
         output: "./dist/effects.js",
         exports: "named",
+        outputOptions: {
+            extend: true,
+        },
     },
     {
         external,
         name: "Scene",
         input: "src/index.umd.ts",
-        output: "./dist/effects.js",
+        output: "./dist/effects.min.js",
         exports: "named",
+        outputOptions: {
+            extend: true,
+        },
         uglify: true,
     },
     {
