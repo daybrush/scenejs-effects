@@ -1,5 +1,5 @@
 import { SceneItemState } from "scenejs";
 
-export interface PresetState extends SceneItemState {
+export interface EffectState extends SceneItemState {
     [key: string]: any;
 }

@@ -1,6 +1,6 @@
-import { SceneItem, AnimatorState } from "@scenejs/effects";
+import { SceneItem, AnimatorState } from "scenejs";
 import { IObject } from "@daybrush/utils";
-import { effectstate } from "./types";
+import { EffectState } from "./types";
 
 /**
  * @namespace effects
@@ -68,7 +68,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial<effectstate>) {
+export function zoomIn({ from = 0, to = 1 }: Partial<EffectState>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -95,7 +95,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial<effectstate>) {
+export function zoomOut({ from = 1, to = 0 }: Partial<EffectState>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -123,7 +123,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<effectstate>) {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState>) {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -151,7 +151,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<effectstate>) {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState>) {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -234,7 +234,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial<effectstate>) {
+export function fadeIn({ from = 0, to = 1 }: Partial<EffectState>) {
     return set("opacity", [from, to], arguments[0]);
 }
 
@@ -261,7 +261,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeOut({ from = 1, to = 0 }: Partial<effectstate>) {
+export function fadeOut({ from = 1, to = 0 }: Partial<EffectState>) {
     return set("opacity", [from, to], arguments[0]);
 }
 /**
@@ -290,6 +290,6 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function blink({ from = 0, to = 1 }: Partial<effectstate>) {
+export function blink({ from = 0, to = 1 }: Partial<EffectState>) {
     return set("opacity", [from, to, from], arguments[0]);
 }
