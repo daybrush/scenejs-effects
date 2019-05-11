@@ -1,6 +1,6 @@
-import { SceneItem, AnimatorState } from "scenejs";
+import { SceneItem, AnimatorState } from "@scenejs/effects";
 import { IObject } from "@daybrush/utils";
-import { PresetState } from "./types";
+import { effectstate } from "./types";
 
 /**
  * @namespace effects
@@ -8,12 +8,12 @@ import { PresetState } from "./types";
 
 /**
  * Use the property to create an effect.
- * @memberof presets
+ * @memberof effects
  * @private
  * @param - property to set effect
  * @param - values of 100%
  * @example
-// import {set, blink} from "scenejs";
+// import {set, blink} from "@scenejs/effects";
 // set("opacity", [0, 1, 0], {duration: 2});
 Scene.set("opacity", [0, 1, 0], {duration: 2});
 
@@ -47,13 +47,13 @@ function set(property: string | string[], values: any[], options: Partial<Animat
 
 /**
  * Make a zoom in effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorOptions} options
  * @param {number} [options.from = 0] start zoom
  * @param {number}[options.to = 1] end zoom
  * @param {number} options.duration animation's duration
  * @example
-// import {set, zoomIn} from "scenejs";
+// import {set, zoomIn} from "@scenejs/effects";
 // zoomIn({duration: 2});
 Scene.zoomIn({duration: 2});
 // Same
@@ -68,19 +68,19 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial<PresetState>) {
+export function zoomIn({ from = 0, to = 1 }: Partial<effectstate>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a zoom out effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorOptions} options
  * @param {number} [options.from = 1] start zoom
  * @param {number}[options.to = 0] end zoom
  * @param {number} options.duration animation's duration
  * @example
-// import {zoomOut} from "scenejs";
+// import {zoomOut} from "@scenejs/effects";
 // zoomOut({duration: 2});
 Scene.zoomOut({duration: 2});
 // Same
@@ -95,20 +95,20 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial<PresetState>) {
+export function zoomOut({ from = 1, to = 0 }: Partial<effectstate>) {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe in effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorOptions} options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "-100%"] start position
  * @param {number|string}[options.to = "0%"] end position
  * @param {number} options.duration animation's duration
  * @example
-// import {wipeIn} from "scenejs";
+// import {wipeIn} from "@scenejs/effects";
 // wipeIn({property: "left", duration: 2});
 Scene.wipeIn({property: "left", duration: 2});
 // Same
@@ -123,20 +123,20 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<PresetState>) {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<effectstate>) {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe out effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorOptions} options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "0%"] start position
  * @param {number|string}[options.to = "100%"] end position
  * @param {number} options.duration animation's duration
  * @example
-// import {wipeOut} from "scenejs";
+// import {wipeOut} from "@scenejs/effects";
 // wipeOut({property: "left", duration: 2});
 Scene.wipeOut({property: "left", duration: 2});
 // Same
@@ -151,13 +151,13 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<PresetState>) {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<effectstate>) {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
  * Use the property to create an effect.
- * @memberof presets
+ * @memberof effects
  * @param {Scene.SceneItem} item1 - Item that end effect
  * @param {Scene.SceneItem} item2 - Item that start effect
  * @param {AnimatorOptions} options
@@ -166,7 +166,7 @@ export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial
  * @param {number} options.duration animation's duration
  * @param {number} [options.time] start time of item1 <br/> <strong>default: item1.getDuration() - duration</strong>
  * @example
-// import {transition} from "scenejs";
+// import {transition} from "@scenejs/effects";
 transition(item1, item2, {
 	from: {
 		opacity: 1,
@@ -213,13 +213,13 @@ export function transition(item1: SceneItem, item2: SceneItem, {
 
 /**
  * Make a fade in effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorState} options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {fadeIn} from "scenejs";
+// import {fadeIn} from "@scenejs/effects";
 // fadeIn({duration: 2});
 Scene.fadeIn({duration: 2});
 // Same
@@ -234,19 +234,19 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial<PresetState>) {
+export function fadeIn({ from = 0, to = 1 }: Partial<effectstate>) {
     return set("opacity", [from, to], arguments[0]);
 }
 
 /**
  * Make a fade out effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorState} options
  * @param {number} [options.from = 1] start opacity
  * @param {number}[options.to = 0] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {fadeOut} from "scenejs";
+// import {fadeOut} from "@scenejs/effects";
 // fadeOut({duration: 2});
 Scene.fadeOut({duration: 2});
 // Same
@@ -261,18 +261,18 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeOut({ from = 1, to = 0 }: Partial<PresetState>) {
+export function fadeOut({ from = 1, to = 0 }: Partial<effectstate>) {
     return set("opacity", [from, to], arguments[0]);
 }
 /**
  * Make a blinking effect.
- * @memberof presets
+ * @memberof effects
  * @param {AnimatorState} options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {blink} from "scenejs";
+// import {blink} from "@scenejs/effects";
 // blink({duration: 2});
 Scene.blink({duration: 2});
 // Same
@@ -290,6 +290,6 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function blink({ from = 0, to = 1 }: Partial<PresetState>) {
+export function blink({ from = 0, to = 1 }: Partial<effectstate>) {
     return set("opacity", [from, to, from], arguments[0]);
 }
