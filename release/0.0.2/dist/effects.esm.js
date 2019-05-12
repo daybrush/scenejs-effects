@@ -224,19 +224,18 @@ item2.set({
 });
  */
 
-function transition(item1, item2, _a) {
-  var _b, _c;
+function transition(item1, item2, transitionObject) {
+  var _a;
 
-  var from = _a.from,
-      to = _a.to,
-      _d = _a.duration,
-      duration = _d === void 0 ? item1.getDuration() : _d,
-      _e = _a.time,
-      time = _e === void 0 ? Math.max(item1.getDuration() - duration, 0) : _e;
-  item1.set((_b = {}, _b[time] = to, _b[time + duration] = from, _b));
-  item2.set((_c = {
-    0: from
-  }, _c[duration] = to, _c));
+  var transitionItem = new SceneItem();
+  transitionItem.append(transitionObject);
+  var duration = transitionItem.getDuration();
+  var transitionTime = Math.max(item1.getDuration() - duration, 0);
+  item1.set((_a = {}, _a[transitionTime] = transitionItem, _a));
+  transitionItem.setDirection("reverse");
+  item2.set({
+    0: transitionItem
+  });
 }
 /**
  * Make a fade in effect.
@@ -334,6 +333,11 @@ function blink(_a) {
       to = _c === void 0 ? 1 : _c;
   return set("opacity", [from, to, from], arguments[0]);
 }
+function shake(_a) {
+  var _b = _a.horizontal,
+      _c = _a.vertical,
+      _d = _a.rotate;
+}
 
-export { blink, fadeIn, fadeOut, transition, wipeIn, wipeOut, zoomIn, zoomOut };
+export { blink, fadeIn, fadeOut, shake, transition, wipeIn, wipeOut, zoomIn, zoomOut };
 //# sourceMappingURL=effects.esm.js.map
