@@ -27,7 +27,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="Effects.html">Effects</a><h4><a href="Effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="Effects.html#.blink">blink</a></li><li data-type='method'><a href="Effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="Effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="Effects.html#.transition">transition</a></li><li data-type='method'><a href="Effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="Effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="Effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="Effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="Effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="Effects.html#.EffectState">EffectState</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -42,17 +42,17 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { SceneItem, AnimatorState } from "scenejs";
-import { IObject } from "@daybrush/utils";
+            <pre class="prettyprint source linenums"><code>import { SceneItem, AnimatorState, Frame } from "scenejs";
+import { IObject, isArray, splitUnit, dot } from "@daybrush/utils";
 import { EffectState } from "./types";
 
 /**
- * @namespace effects
+ * @namespace Effects
  */
 
 /**
  * Use the property to create an effect.
- * @memberof effects
+ * @memberof Effects
  * @private
  * @param - property to set effect
  * @param - values of 100%
@@ -79,7 +79,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-function set(property: string | string[], values: any[], options: Partial&lt;AnimatorState>) {
+function set(property: string | string[], values: any[], options: Partial&lt;AnimatorState>): SceneItem {
     const item = new SceneItem({}, options);
     const length = values.length;
 
@@ -91,8 +91,8 @@ function set(property: string | string[], values: any[], options: Partial&lt;Ani
 
 /**
  * Make a zoom in effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start zoom
  * @param {number}[options.to = 1] end zoom
  * @param {number} options.duration animation's duration
@@ -112,14 +112,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial&lt;EffectState>) {
+export function zoomIn({ from = 0, to = 1 }: Partial&lt;EffectState>): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a zoom out effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 1] start zoom
  * @param {number}[options.to = 0] end zoom
  * @param {number} options.duration animation's duration
@@ -139,14 +139,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial&lt;EffectState>) {
+export function zoomOut({ from = 1, to = 0 }: Partial&lt;EffectState>): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe in effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "-100%"] start position
  * @param {number|string}[options.to = "0%"] end position
@@ -167,14 +167,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial&lt;EffectState>) {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial&lt;EffectState>): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe out effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "0%"] start position
  * @param {number|string}[options.to = "100%"] end position
@@ -195,49 +195,41 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial&lt;EffectState>) {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial&lt;EffectState>): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
- * Use the property to create an effect.
- * @memberof effects
- * @param {Scene.SceneItem} item1 - Item that end effect
- * @param {Scene.SceneItem} item2 - Item that start effect
- * @param {AnimatorOptions} options
- * @param {object} options.from The starting properties of item1 and end properties of item2
- * @param {object} options.to The starting properties of item2 and end properties of item1
- * @param {number} options.duration animation's duration
- * @param {number} [options.time] start time of item1 &lt;br/> &lt;strong>default: item1.getDuration() - duration&lt;/strong>
+ * Switch the scene from `item1` to `item2`.
+ * @memberof Effects
+ * @param - Item that end effect
+ * @param - Item that start effect
+ * @param -  `transitionItem` or `transitionObject` to switch from `item1` to `item2`
  * @example
-// import {transition} from "@scenejs/effects";
-transition(item1, item2, {
-	from: {
-		opacity: 1,
-	},
-	to: {
-		opacity: 0,
-	},
-	duration: 0.1,
-});
+import Scene from "scenejs";
+import {transition, zoomIn, fadeOut} from "@scenejs/effects";
 
-// Same
-item1.set({
-	[item1.getDuration() - 0.1]: {
-		opacity: 1,
-	},
-	[item1.getDuration()]: {
-		opacity: 0,
-	}
+var transitionScene = new Scene({
+  "[data-transition] .target": {},
+  "[data-transition] .target2": {},
+}, {
+  delay: 0.1,
+  easing: "ease-in-out",
+  selector: true,
 });
-item2.set({
-	0: {
-		opacity: 0,
-	},
-	0.1: {
-		opacity: 1,
-	}
-});
+Scene.transition(
+  transitionScene.getItem("[data-transition] .target"),
+  transitionScene.getItem("[data-transition] .target2"),
+  {
+    0:  [
+      fadeOut({ duration: 1 }),
+      zoomIn({ from: 1, to: 2, duration: 1 }),
+      "opacity: 1; transform: rotate(0deg)",
+    ],
+    1: "opacity: 0; transform: rotate(40deg)",
+  }
+);
+transitionScene.play();
  */
 export function transition(
     item1: SceneItem,
@@ -261,8 +253,8 @@ export function transition(
 
 /**
  * Make a fade in effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
@@ -282,14 +274,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial&lt;EffectState>) {
+export function fadeIn({ from = 0, to = 1 }: Partial&lt;EffectState>): SceneItem {
     return set("opacity", [from, to], arguments[0]);
 }
 
 /**
  * Make a fade out effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 1] start opacity
  * @param {number}[options.to = 0] end opacity
  * @param {number} options.duration animation's duration
@@ -309,13 +301,13 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeOut({ from = 1, to = 0 }: Partial&lt;EffectState>) {
+export function fadeOut({ from = 1, to = 0 }: Partial&lt;EffectState>): SceneItem {
     return set("opacity", [from, to], arguments[0]);
 }
 /**
  * Make a blinking effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
@@ -338,16 +330,53 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function blink({ from = 0, to = 1 }: Partial&lt;EffectState>) {
+export function blink({ from = 0, to = 1 }: Partial&lt;EffectState>): SceneItem {
     return set("opacity", [from, to, from], arguments[0]);
 }
 
 export function shake({
-    horizontal = 0,
-    vertical = 0,
-    rotate = 0,
-}: Partial&lt;EffectState>) {
+    properties = {
+        transform: {
+            translateX: [`-10px`, `10px`],
+            translateY: [`-10px`, `10px`],
+            rotate: [`-10deg`, `10deg`],
+        },
+    },
+}: Partial&lt;EffectState>): SceneItem {
+    const item = new SceneItem({}, arguments[0]);
+    const frame = new Frame(properties);
+    const names = frame.getNames();
+    const preset = [-1, 0.5, -0.5, 1, -0.5, 0.5, -1];
+    const length = preset.length;
 
+    names.forEach(propertyNames => {
+        const value = frame.get(...propertyNames);
+        let start: number = 0;
+        let end: number = 0;
+        let unit: string = "";
+
+        if (isArray(value)) {
+            const {value: startNumber, unit: startUnit} = splitUnit(value[0]);
+
+            unit = startUnit;
+            start = startNumber;
+            end = splitUnit(value[1]).value;
+        } else {
+            const {value: valueNumber, unit: valueUnit} = splitUnit(value);
+
+            unit = valueUnit;
+            end = Math.abs(valueNumber);
+            start = -end;
+        }
+        [-1, 0.5, -0.5, 1, -0.5, 0.5, -1].map((ratio, i) => {
+            const result = dot(start, end, ratio + 1, 1 - ratio);
+
+            for (let i = 0; i &lt; length; ++i) {
+                item.set(`${i / (length - 1) * 100}%`, ...propertyNames, `${result}${unit}`);
+            }
+        });
+    });
+    return item;
 }
 </code></pre>
         </article>
@@ -373,7 +402,7 @@ nav li[file="effects"] h4, nav li[file="effects"] ul {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Mon May 13 2019 00:19:31 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Tue May 14 2019 03:31:58 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>effects - Documentation</title>
+    <title>Effects - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" href="styles/daybrush.css">
     <link type="text/css" rel="stylesheet" href="styles/custom.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="description" content="effects - Documentation"/>
+    <meta name="description" content="Effects - Documentation"/>
 
 </head>
 <body>
@@ -27,12 +27,12 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="Effects.html">Effects</a><h4><a href="Effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="Effects.html#.blink">blink</a></li><li data-type='method'><a href="Effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="Effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="Effects.html#.transition">transition</a></li><li data-type='method'><a href="Effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="Effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="Effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="Effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="Effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="Effects.html#.EffectState">EffectState</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">effects</h1>
+    <h1 class="page-title">Effects</h1>
     
 
     
@@ -45,7 +45,7 @@
 <header>
     
         <h2>
-        effects
+        Effects
         </h2>
         
     
@@ -125,7 +125,7 @@
 
     
 
-    <h4 class="name" id=".blink"><span class="type-signature">(static) </span>blink<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".blink"><span class="type-signature">(static) </span>blink<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -137,7 +137,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line297">line 297</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line289">line 289</a>
     </li></ul></dd>
     
 
@@ -218,7 +218,7 @@
             <td class="type">
             
                 
-<span class="param-type">AnimatorState</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -387,6 +387,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -394,7 +412,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".fadeIn"><span class="type-signature">(static) </span>fadeIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".fadeIn"><span class="type-signature">(static) </span>fadeIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -406,7 +424,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line241">line 241</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -487,7 +505,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">AnimatorState</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -653,6 +671,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -660,7 +696,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".fadeOut"><span class="type-signature">(static) </span>fadeOut<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".fadeOut"><span class="type-signature">(static) </span>fadeOut<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -672,7 +708,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line268">line 268</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line260">line 260</a>
     </li></ul></dd>
     
 
@@ -753,7 +789,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">AnimatorState</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -919,6 +955,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -926,7 +980,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".transition"><span class="type-signature">(static) </span>transition<span class="signature">(item1, item2, options, options.from, options.to, options.duration, options.time<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id=".transition"><span class="type-signature">(static) </span>transition<span class="signature">(item1, item2, transitionObject)</span><span class="type-signature"> &rarr; {void}</span></h4>
 
     
 
@@ -938,7 +992,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line198">line 198</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line190">line 190</a>
     </li></ul></dd>
     
 
@@ -978,7 +1032,7 @@ new SceneItem({
 
 
 <div class="description">
-    Use the property to create an effect.
+    Switch the scene from `item1` to `item2`.
 </div>
 
 
@@ -1019,7 +1073,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">Scene.SceneItem</span>
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
 
 
             
@@ -1042,7 +1096,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">Scene.SceneItem</span>
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
 
 
             
@@ -1059,13 +1113,13 @@ new SceneItem({
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>transitionObject</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">AnimatorOptions</span>
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a> | <a href="http://daybrush.com/utils/release/latest/doc/global.html#ObjectInterface" target="_blank">IObject</a>&lt;any></span>
 
 
             
@@ -1075,125 +1129,7 @@ new SceneItem({
 
             
 
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>from</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The starting properties of item1 and end properties of item2</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>to</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The starting properties of item2 and end properties of item1</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>duration</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">animation's duration</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>time</code>?</td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">start time of item1 <br/> <strong>default: item1.getDuration() - duration</strong></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last">`transitionItem` or `transitionObject` to switch from `item1` to `item2`</td>
         </tr>
 
     
@@ -1207,34 +1143,30 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {transition} from "@scenejs/effects";
-transition(item1, item2, {
-	from: {
-		opacity: 1,
-	},
-	to: {
-		opacity: 0,
-	},
-	duration: 0.1,
-});
+    <pre class="prettyprint"><code>import Scene from "scenejs";
+import {transition, zoomIn, fadeOut} from "@scenejs/effects";
 
-// Same
-item1.set({
-	[item1.getDuration() - 0.1]: {
-		opacity: 1,
-	},
-	[item1.getDuration()]: {
-		opacity: 0,
-	}
+var transitionScene = new Scene({
+  "[data-transition] .target": {},
+  "[data-transition] .target2": {},
+}, {
+  delay: 0.1,
+  easing: "ease-in-out",
+  selector: true,
 });
-item2.set({
-	0: {
-		opacity: 0,
-	},
-	0.1: {
-		opacity: 1,
-	}
-});</code></pre>
+Scene.transition(
+  transitionScene.getItem("[data-transition] .target"),
+  transitionScene.getItem("[data-transition] .target2"),
+  {
+    0:  [
+      fadeOut({ duration: 1 }),
+      zoomIn({ from: 1, to: 2, duration: 1 }),
+      "opacity: 1; transform: rotate(0deg)",
+    ],
+    1: "opacity: 0; transform: rotate(40deg)",
+  }
+);
+transitionScene.play();</code></pre>
 
 
 
@@ -1275,7 +1207,7 @@ item2.set({
 
     
 
-    <h4 class="name" id=".wipeIn"><span class="type-signature">(static) </span>wipeIn<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".wipeIn"><span class="type-signature">(static) </span>wipeIn<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1368,7 +1300,7 @@ item2.set({
             <td class="type">
             
                 
-<span class="param-type">AnimatorOptions</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -1572,6 +1504,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -1579,7 +1529,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".wipeOut"><span class="type-signature">(static) </span>wipeOut<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".wipeOut"><span class="type-signature">(static) </span>wipeOut<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1672,7 +1622,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">AnimatorOptions</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -1876,6 +1826,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -1883,7 +1851,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".zoomIn"><span class="type-signature">(static) </span>zoomIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".zoomIn"><span class="type-signature">(static) </span>zoomIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1976,7 +1944,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">AnimatorOptions</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -2142,6 +2110,24 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
@@ -2149,7 +2135,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".zoomOut"><span class="type-signature">(static) </span>zoomOut<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".zoomOut"><span class="type-signature">(static) </span>zoomOut<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -2242,7 +2228,7 @@ new SceneItem({
             <td class="type">
             
                 
-<span class="param-type">AnimatorOptions</span>
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
 
 
             
@@ -2408,11 +2394,165 @@ new SceneItem({
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
         
     
 
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id=".EffectState">EffectState</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="types.ts.html">types.ts</a>, <a href="types.ts.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://daybrush.com/scenejs/release/latest/doc/global.html#SceneItemState">SceneItemState</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>[key: string]</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">any</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    interface EffectState extends SceneItemState
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">TSInterface</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
     
 
     
@@ -2440,7 +2580,7 @@ nav li[file="effects"] h4, nav li[file="effects"] ul {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Mon May 13 2019 00:19:31 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Tue May 14 2019 03:31:58 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
