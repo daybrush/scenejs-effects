@@ -366,10 +366,7 @@ function shake(_a) {
 
     [-1, 0.5, -0.5, 1, -0.5, 0.5, -1].map(function (ratio, i) {
       var result = dot(start, end, ratio + 1, 1 - ratio);
-
-      for (var i_1 = 0; i_1 < length; ++i_1) {
-        item.set.apply(item, [i_1 / (length - 1) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
-      }
+      item.set.apply(item, [i / (length - 1) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
     });
   });
   return item;
