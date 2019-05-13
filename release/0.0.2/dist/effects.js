@@ -343,7 +343,7 @@ version: 0.0.2
     var names = frame.getNames();
     var preset = [-1, 0.5, -0.5, 1, -0.5, 0.5, -1];
     var length = preset.length;
-    names.forEach(function (propertyNames) {
+    names.forEach(function (propertyNames, i) {
       var value = frame.get.apply(frame, propertyNames);
       var start = 0;
       var end = 0;
@@ -367,9 +367,9 @@ version: 0.0.2
         start = -end;
       }
 
-      [-1, 0.5, -0.5, 1, -0.5, 0.5, -1].map(function (ratio, i) {
-        var result = utils.dot(start, end, ratio + 1, 1 - ratio);
-        item.set.apply(item, [i / (length - 1) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
+      preset.forEach(function (ratio, j) {
+        var result = utils.dot(start, end, ratio + 1, 1 - ratio) * (i % 2 ? -1 : 1);
+        item.set.apply(item, [j / (length - j) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
       });
     });
     return item;
