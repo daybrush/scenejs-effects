@@ -156,58 +156,54 @@ export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial
 }
 
 /**
- * Use the property to create an effect.
+ * Switch the scene from `item1` to `item2`.
  * @memberof effects
- * @param {Scene.SceneItem} item1 - Item that end effect
- * @param {Scene.SceneItem} item2 - Item that start effect
- * @param {AnimatorOptions} options
- * @param {object} options.from The starting properties of item1 and end properties of item2
- * @param {object} options.to The starting properties of item2 and end properties of item1
- * @param {number} options.duration animation's duration
- * @param {number} [options.time] start time of item1 <br/> <strong>default: item1.getDuration() - duration</strong>
+ * @param - Item that end effect
+ * @param - Item that start effect
+ * @param -  `transitionItem` or `transitionObject` to switch from `item1` to `item2`
  * @example
-// import {transition} from "@scenejs/effects";
-transition(item1, item2, {
-	from: {
-		opacity: 1,
-	},
-	to: {
-		opacity: 0,
-	},
-	duration: 0.1,
-});
+import Scene from "scenejs";
+import {transition, zoomIn, fadeOut} from "@scenejs/effects";
 
-// Same
-item1.set({
-	[item1.getDuration() - 0.1]: {
-		opacity: 1,
-	},
-	[item1.getDuration()]: {
-		opacity: 0,
-	}
+var transitionScene = new Scene({
+  "[data-transition] .target": {},
+  "[data-transition] .target2": {},
+}, {
+  delay: 0.1,
+  easing: "ease-in-out",
+  selector: true,
 });
-item2.set({
-	0: {
-		opacity: 0,
-	},
-	0.1: {
-		opacity: 1,
-	}
-});
+Scene.transition(
+  transitionScene.getItem("[data-transition] .target"),
+  transitionScene.getItem("[data-transition] .target2"),
+  {
+    0:  [
+      fadeOut({ duration: 1 }),
+      zoomIn({ from: 1, to: 2, duration: 1 }),
+      "opacity: 1; transform: rotate(0deg)",
+    ],
+    1: "opacity: 0; transform: rotate(40deg)",
+  }
+);
+transitionScene.play();
  */
-export function transition(item1: SceneItem, item2: SceneItem, {
-    from,
-    to,
-    duration = item1.getDuration(),
-    time = Math.max(item1.getDuration() - duration, 0),
-}: { from: IObject<any>, to: IObject<any>, duration?: number, time?: number }) {
+export function transition(
+    item1: SceneItem,
+    item2: SceneItem,
+    transitionObject: SceneItem | IObject<any>,
+): void {
+    const transitionItem = new SceneItem();
+
+    transitionItem.append(transitionObject);
+
+    const duration = transitionItem.getDuration();
+    const transitionTime = Math.max(item1.getDuration() - duration, 0);
     item1.set({
-        [time]: to,
-        [time + duration]: from,
+        [transitionTime]: transitionItem,
     });
+    transitionItem.setDirection("reverse");
     item2.set({
-        0: from,
-        [duration]: to,
+        0: transitionItem,
     });
 }
 
