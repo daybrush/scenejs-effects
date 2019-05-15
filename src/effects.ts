@@ -1,14 +1,14 @@
-import { SceneItem, AnimatorState } from "scenejs";
-import { IObject } from "@daybrush/utils";
+import { SceneItem, AnimatorState, Frame } from "scenejs";
+import { IObject, isArray, splitUnit, dot } from "@daybrush/utils";
 import { EffectState } from "./types";
 
 /**
- * @namespace effects
+ * @namespace Effects
  */
 
 /**
  * Use the property to create an effect.
- * @memberof effects
+ * @memberof Effects
  * @private
  * @param - property to set effect
  * @param - values of 100%
@@ -35,7 +35,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-function set(property: string | string[], values: any[], options: Partial<AnimatorState>) {
+function set(property: string | string[], values: any[], options: Partial<AnimatorState>): SceneItem {
     const item = new SceneItem({}, options);
     const length = values.length;
 
@@ -47,8 +47,8 @@ function set(property: string | string[], values: any[], options: Partial<Animat
 
 /**
  * Make a zoom in effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start zoom
  * @param {number}[options.to = 1] end zoom
  * @param {number} options.duration animation's duration
@@ -68,14 +68,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial<EffectState>) {
+export function zoomIn({ from = 0, to = 1 }: Partial<EffectState>): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a zoom out effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 1] start zoom
  * @param {number}[options.to = 0] end zoom
  * @param {number} options.duration animation's duration
@@ -95,14 +95,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial<EffectState>) {
+export function zoomOut({ from = 1, to = 0 }: Partial<EffectState>): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe in effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "-100%"] start position
  * @param {number|string}[options.to = "0%"] end position
@@ -123,14 +123,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState>) {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState>): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
  * Make a wipe out effect.
- * @memberof effects
- * @param {AnimatorOptions} options
+ * @memberof Effects
+ * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "0%"] start position
  * @param {number|string}[options.to = "100%"] end position
@@ -151,13 +151,13 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState>) {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState>): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
 /**
  * Switch the scene from `item1` to `item2`.
- * @memberof effects
+ * @memberof Effects
  * @param - Item that end effect
  * @param - Item that start effect
  * @param -  `transitionItem` or `transitionObject` to switch from `item1` to `item2`
@@ -209,8 +209,8 @@ export function transition(
 
 /**
  * Make a fade in effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
@@ -230,14 +230,14 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial<EffectState>) {
+export function fadeIn({ from = 0, to = 1 }: Partial<EffectState>): SceneItem {
     return set("opacity", [from, to], arguments[0]);
 }
 
 /**
  * Make a fade out effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 1] start opacity
  * @param {number}[options.to = 0] end opacity
  * @param {number} options.duration animation's duration
@@ -257,13 +257,13 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeOut({ from = 1, to = 0 }: Partial<EffectState>) {
+export function fadeOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneItem {
     return set("opacity", [from, to], arguments[0]);
 }
 /**
  * Make a blinking effect.
- * @memberof effects
- * @param {AnimatorState} options
+ * @memberof Effects
+ * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
@@ -286,6 +286,52 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function blink({ from = 0, to = 1 }: Partial<EffectState>) {
+export function blink({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneItem {
     return set("opacity", [from, to, from], arguments[0]);
+}
+
+
+export function shake({
+    properties = {
+        transform: {
+            translateX: [`-5px`, `5px`],
+            translateY: [`-5px`, `5px`],
+            rotate: [`-5deg`, `5deg`],
+        },
+    },
+    interval = 10,
+}: Partial<EffectState> = {}): SceneItem {
+    const item = new SceneItem({}, arguments[0]);
+    const frame = new Frame(properties);
+    const names = frame.getNames();
+
+    names.forEach((propertyNames, i) => {
+        const value = frame.get(...propertyNames);
+        let start: number = 0;
+        let end: number = 0;
+        let unit: string = "";
+
+        if (isArray(value)) {
+            const {value: startNumber, unit: startUnit} = splitUnit(value[0]);
+
+            unit = startUnit;
+            start = startNumber;
+            end = splitUnit(value[1]).value;
+        } else {
+            const {value: valueNumber, unit: valueUnit} = splitUnit(value);
+
+            unit = valueUnit;
+            end = Math.abs(valueNumber);
+            start = -end;
+        }
+        item.set(`0%`, ...propertyNames, `${start + end}${unit}`);
+        item.set(`100%`, ...propertyNames, `${start + end}${unit}`);
+        for (let j = 1; j < interval - 1; ++j) {
+            const ratio = Math.random() * (end - start) + start;
+            const result = dot(start, end, ratio + 1, 1 - ratio) * (i % 2 ? -1 : 1);
+
+            item.set(`${j / (interval - 1) * 100}%`, ...propertyNames, `${result}${unit}`);
+        }
+    });
+    return item;
 }

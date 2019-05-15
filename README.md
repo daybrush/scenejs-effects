@@ -2,6 +2,7 @@
 
 
 Effect collection library where you can add scene effects to [**Scene.js**](https://www.npmjs.com/package/scenejs).
+
 ## Installation
 ```bash
 $ npm install @scenejs/effects
@@ -9,7 +10,12 @@ $ npm install @scenejs/effects
 ```html
 <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.min.js"></script>
 ```
-## effects
+
+## API Documents
+* [API Doucmentation](http://daybrush.com/scenejs-effects/release/latest/doc/)
+* [Features Documentation](http://daybrush.com/scenejs/features.html#effects)
+
+## Effects
 * [wipeIn](https://daybrush.com/scenejs/features.html#wipein)
 * [wipeOut](https://daybrush.com/scenejs/features.html#wipeout)
 * [zoomIn](https://daybrush.com/scenejs/features.html#zoomin)
@@ -17,6 +23,7 @@ $ npm install @scenejs/effects
 * [blink](https://daybrush.com/scenejs/features.html#bllink)
 * [fadeIn](https://daybrush.com/scenejs/features.html#fadein)
 * [fadeOut](https://daybrush.com/scenejs/features.html#fadeout)
+* [shake](https://daybrush.com/scenejs/features.html#shake)
 * [transition](https://daybrush.com/scenejs/features.html#transition)
 
 ```

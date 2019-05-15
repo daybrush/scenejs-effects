@@ -20,6 +20,12 @@
         "cleverLinks": false,
         "monospaceLinks": false
     },
+    "linkMap": {
+        "IObject": "http://daybrush.com/utils/release/latest/doc/global.html#ObjectInterface",
+        "AnimatorState": "https://daybrush.com/scenejs/release/latest/doc/global.html#AnimatorState",
+        "SceneItem": "https://daybrush.com/scenejs/release/latest/doc/SceneItem.html",
+        "SceneItemState": "https://daybrush.com/scenejs/release/latest/doc/global.html#SceneItemState"
+    },
     "docdash": {
         "menu": {
             "Github repo": {
