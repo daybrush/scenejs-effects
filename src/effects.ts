@@ -289,8 +289,62 @@ new SceneItem({
 export function blink({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneItem {
     return set("opacity", [from, to, from], arguments[0]);
 }
+export function flip({
+    x = 1,
+    y = 1,
+    backside = false,
+}: Partial<EffectState> = {}) {
+    const item = new SceneItem({}, arguments[0]);
+    let property = "";
+    let startValue = "";
+    let endValue = "";
+    const ratio = (x && y) || x ? x : y;
+    const startDeg = (backside ? (ratio > 0 ? 180 : -180) : 0);
+    const endDeg = startDeg + ratio * 180;
 
+    if (x && y) {
+        const axis = [x > 0 ? 1 : -1, y > 0 ? 1 : -1, 0, ""].join(",");
 
+        property = "rotate3d";
+        startValue = axis + startDeg + "deg";
+        endValue = axis + endDeg + "deg";
+    } else {
+        if (x) {
+            property = "rotateX";
+        } else if (y) {
+            property = "rotateY";
+        } else {
+            return item;
+        }
+        startValue = startDeg + "deg";
+        endValue = endDeg + "deg";
+    }
+    item.set({
+        transform: {
+            [property]: [startValue, endValue],
+        },
+    });
+    return item;
+}
+export function flipX({
+    x = 1,
+    backside = false,
+}: Partial<EffectState> = {}): SceneItem {
+    const item = flip({ y: 0, x, backside });
+
+    item.setOptions(arguments[0]);
+
+    return item;
+}
+export function flipY({
+    y = 1,
+    backside = false,
+}: Partial<EffectState> = {}): SceneItem {
+    const item = flip({ x: 0, y, backside });
+
+    item.setOptions(arguments[0]);
+    return item;
+}
 export function shake({
     properties = {
         transform: {
