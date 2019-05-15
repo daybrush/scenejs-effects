@@ -289,10 +289,12 @@ version: 0.0.2
    */
 
   function fadeOut(_a) {
-    var _b = _a.from,
-        from = _b === void 0 ? 1 : _b,
-        _c = _a.to,
-        to = _c === void 0 ? 0 : _c;
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.from,
+        from = _c === void 0 ? 1 : _c,
+        _d = _b.to,
+        to = _d === void 0 ? 0 : _d;
+
     return set("opacity", [from, to], arguments[0]);
   }
   /**
@@ -323,24 +325,98 @@ version: 0.0.2
    */
 
   function blink(_a) {
-    var _b = _a.from,
-        from = _b === void 0 ? 0 : _b,
-        _c = _a.to,
-        to = _c === void 0 ? 1 : _c;
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.from,
+        from = _c === void 0 ? 0 : _c,
+        _d = _b.to,
+        to = _d === void 0 ? 1 : _d;
+
     return set("opacity", [from, to, from], arguments[0]);
   }
-  function flip(_a) {}
+  function flip(_a) {
+    var _b;
+
+    var _c = _a === void 0 ? {} : _a,
+        _d = _c.x,
+        x = _d === void 0 ? 1 : _d,
+        _e = _c.y,
+        y = _e === void 0 ? 0 : _e,
+        _f = _c.backside,
+        backside = _f === void 0 ? false : _f;
+
+    var item = new scenejs.SceneItem({}, arguments[0]);
+    var property = "";
+    var startValue = "";
+    var endValue = "";
+    var ratio = x && y || x ? x : y;
+    var startDeg = backside ? ratio > 0 ? 180 : -180 : 0;
+    var endDeg = startDeg + ratio * 180;
+
+    if (x && y) {
+      var axis = [x > 0 ? 1 : -1, y > 0 ? 1 : -1, 0, ""].join(",");
+      property = "rotate3d";
+      startValue = axis + startDeg + "deg";
+      endValue = axis + endDeg + "deg";
+    } else {
+      if (x) {
+        property = "rotateX";
+      } else if (y) {
+        property = "rotateY";
+      } else {
+        return item;
+      }
+
+      startValue = startDeg + "deg";
+      endValue = endDeg + "deg";
+    }
+
+    item.set({
+      transform: (_b = {}, _b[property] = [startValue, endValue], _b)
+    });
+    return item;
+  }
+  function flipX(_a) {
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.x,
+        x = _c === void 0 ? 1 : _c,
+        _d = _b.backside,
+        backside = _d === void 0 ? false : _d;
+
+    var item = flip({
+      x: x,
+      backside: backside
+    });
+    item.setOptions(arguments[0]);
+    return item;
+  }
+  function flipY(_a) {
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.y,
+        y = _c === void 0 ? 1 : _c,
+        _d = _b.backside,
+        backside = _d === void 0 ? false : _d;
+
+    var item = flip({
+      x: 0,
+      y: y,
+      backside: backside
+    });
+    item.setOptions(arguments[0]);
+    return item;
+  }
   function shake(_a) {
-    var _b = _a.properties,
-        properties = _b === void 0 ? {
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.properties,
+        properties = _c === void 0 ? {
       transform: {
         translateX: ["-5px", "5px"],
         translateY: ["-5px", "5px"],
         rotate: ["-5deg", "5deg"]
       }
-    } : _b,
-        _c = _a.interval,
-        interval = _c === void 0 ? 10 : _c;
+    } : _c,
+        _d = _b.interval,
+        interval = _d === void 0 ? 10 : _d;
+
     var item = new scenejs.SceneItem({}, arguments[0]);
     var frame = new scenejs.Frame(properties);
     var names = frame.getNames();
@@ -384,6 +460,8 @@ version: 0.0.2
   exports.fadeIn = fadeIn;
   exports.fadeOut = fadeOut;
   exports.flip = flip;
+  exports.flipX = flipX;
+  exports.flipY = flipY;
   exports.shake = shake;
   exports.transition = transition;
   exports.wipeIn = wipeIn;
