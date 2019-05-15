@@ -330,16 +330,15 @@ function shake(_a) {
   var _b = _a.properties,
       properties = _b === void 0 ? {
     transform: {
-      translateX: ["-10px", "10px"],
-      translateY: ["-10px", "10px"],
-      rotate: ["-10deg", "10deg"]
+      translateX: ["-5px", "5px"],
+      translateY: ["-5px", "5px"],
+      rotate: ["-5deg", "5deg"]
     }
   } : _b;
   var item = new SceneItem({}, arguments[0]);
   var frame = new Frame(properties);
   var names = frame.getNames();
-  var preset = [-1, 0.5, -0.5, 1, -0.5, 0.5, -1];
-  var length = preset.length;
+  var interval = 10;
   names.forEach(function (propertyNames, i) {
     var value = frame.get.apply(frame, propertyNames);
     var start = 0;
@@ -364,10 +363,11 @@ function shake(_a) {
       start = -end;
     }
 
-    preset.forEach(function (ratio, j) {
+    for (var j = 0; j < interval; ++j) {
+      var ratio = Math.random() * (end - start) + start;
       var result = dot(start, end, ratio + 1, 1 - ratio) * (i % 2 ? -1 : 1);
-      item.set.apply(item, [j / (length - j) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
-    });
+      item.set.apply(item, [j / (interval - 1) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
+    }
   });
   return item;
 }
