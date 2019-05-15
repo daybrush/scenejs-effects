@@ -326,6 +326,7 @@ function blink(_a) {
       to = _c === void 0 ? 1 : _c;
   return set("opacity", [from, to, from], arguments[0]);
 }
+function flip(_a) {}
 function shake(_a) {
   var _b = _a.properties,
       properties = _b === void 0 ? {
@@ -334,11 +335,12 @@ function shake(_a) {
       translateY: ["-5px", "5px"],
       rotate: ["-5deg", "5deg"]
     }
-  } : _b;
+  } : _b,
+      _c = _a.interval,
+      interval = _c === void 0 ? 10 : _c;
   var item = new SceneItem({}, arguments[0]);
   var frame = new Frame(properties);
   var names = frame.getNames();
-  var interval = 10;
   names.forEach(function (propertyNames, i) {
     var value = frame.get.apply(frame, propertyNames);
     var start = 0;
@@ -363,7 +365,10 @@ function shake(_a) {
       start = -end;
     }
 
-    for (var j = 0; j < interval; ++j) {
+    item.set.apply(item, ["0%"].concat(propertyNames, ["" + (start + end) + unit]));
+    item.set.apply(item, ["100%"].concat(propertyNames, ["" + (start + end) + unit]));
+
+    for (var j = 1; j < interval - 1; ++j) {
       var ratio = Math.random() * (end - start) + start;
       var result = dot(start, end, ratio + 1, 1 - ratio) * (i % 2 ? -1 : 1);
       item.set.apply(item, [j / (interval - 1) * 100 + "%"].concat(propertyNames, ["" + result + unit]));
@@ -372,5 +377,5 @@ function shake(_a) {
   return item;
 }
 
-export { blink, fadeIn, fadeOut, shake, transition, wipeIn, wipeOut, zoomIn, zoomOut };
+export { blink, fadeIn, fadeOut, flip, shake, transition, wipeIn, wipeOut, zoomIn, zoomOut };
 //# sourceMappingURL=effects.esm.js.map
