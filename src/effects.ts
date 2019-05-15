@@ -68,7 +68,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomIn({ from = 0, to = 1 }: Partial<EffectState>): SceneItem {
+export function zoomIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -95,7 +95,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function zoomOut({ from = 1, to = 0 }: Partial<EffectState>): SceneItem {
+export function zoomOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneItem {
     return set(["transform", "scale"], [from, to], arguments[0]);
 }
 
@@ -123,7 +123,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState>): SceneItem {
+export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial<EffectState> = {}): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -151,7 +151,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState>): SceneItem {
+export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial<EffectState> = {}): SceneItem {
     return set(property, [from, to], arguments[0]);
 }
 
@@ -230,7 +230,7 @@ new SceneItem({
 	duration: 2,
 });
  */
-export function fadeIn({ from = 0, to = 1 }: Partial<EffectState>): SceneItem {
+export function fadeIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneItem {
     return set("opacity", [from, to], arguments[0]);
 }
 
@@ -348,12 +348,12 @@ export function flipY({
 export function shake({
     properties = {
         transform: {
-            translateX: [`-5px`, `5px`],
-            translateY: [`-5px`, `5px`],
-            rotate: [`-5deg`, `5deg`],
+            translateX: [`-10px`, `10px`],
+            translateY: [`-10px`, `10px`],
+            rotate: [`-10deg`, `10deg`],
         },
     },
-    interval = 10,
+    length = 10,
 }: Partial<EffectState> = {}): SceneItem {
     const item = new SceneItem({}, arguments[0]);
     const frame = new Frame(properties);
@@ -366,26 +366,58 @@ export function shake({
         let unit: string = "";
 
         if (isArray(value)) {
-            const {value: startNumber, unit: startUnit} = splitUnit(value[0]);
+            const { value: startNumber, unit: startUnit } = splitUnit(value[0]);
 
             unit = startUnit;
             start = startNumber;
             end = splitUnit(value[1]).value;
         } else {
-            const {value: valueNumber, unit: valueUnit} = splitUnit(value);
+            const { value: valueNumber, unit: valueUnit } = splitUnit(value);
 
             unit = valueUnit;
             end = Math.abs(valueNumber);
             start = -end;
         }
-        item.set(`0%`, ...propertyNames, `${start + end}${unit}`);
-        item.set(`100%`, ...propertyNames, `${start + end}${unit}`);
-        for (let j = 1; j < interval - 1; ++j) {
-            const ratio = Math.random() * (end - start) + start;
-            const result = dot(start, end, ratio + 1, 1 - ratio) * (i % 2 ? -1 : 1);
+        item.set(`0%`, ...propertyNames, `${(start + end) / 2}${unit}`);
+        item.set(`100%`, ...propertyNames, `${(start + end) / 2}${unit}`);
 
-            item.set(`${j / (interval - 1) * 100}%`, ...propertyNames, `${result}${unit}`);
+        for (let j = 1; j <= length; ++j) {
+            const ratio = Math.random() * (end - start) + start;
+            item.set(`${j / (length + 1) * 100}%`, ...propertyNames, `${ratio}${unit}`);
         }
     });
+    return item;
+}
+export function shakeX({
+    x = ["-5px", "5px"],
+    length = 10,
+}: Partial<EffectState> = {}) {
+    const item = shake({
+        properties: {
+            transform: {
+                translateX: x,
+            },
+        },
+        length,
+    });
+    item.setOptions(arguments[0]);
+
+    return item;
+}
+
+export function shakeY({
+    y = ["-5px", "5px"],
+    length = 10,
+}: Partial<EffectState> = {}) {
+    const item = shake({
+        properties: {
+            transform: {
+                translateY: y,
+            },
+        },
+        length,
+    });
+    item.setOptions(arguments[0]);
+
     return item;
 }
