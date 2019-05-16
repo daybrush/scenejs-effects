@@ -27,7 +27,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="Effects.html">Effects</a><h4><a href="Effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="Effects.html#.blink">blink</a></li><li data-type='method'><a href="Effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="Effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="Effects.html#.transition">transition</a></li><li data-type='method'><a href="Effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="Effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="Effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="Effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="Effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="Effects.html#.EffectState">EffectState</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="Effects.html">Effects</a><h4><a href="Effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="Effects.html#.blink">blink</a></li><li data-type='method'><a href="Effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="Effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="Effects.html#.flip">flip</a></li><li data-type='method'><a href="Effects.html#.flipX">flipX</a></li><li data-type='method'><a href="Effects.html#.flipY">flipY</a></li><li data-type='method'><a href="Effects.html#.shake">shake</a></li><li data-type='method'><a href="Effects.html#.shakeX">shakeX</a></li><li data-type='method'><a href="Effects.html#.shakeY">shakeY</a></li><li data-type='method'><a href="Effects.html#.transition">transition</a></li><li data-type='method'><a href="Effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="Effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="Effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="Effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="Effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="Effects.html#.EffectState">EffectState</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -137,7 +137,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line289">line 289</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line294">line 294</a>
     </li></ul></dd>
     
 
@@ -363,9 +363,9 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {blink} from "@scenejs/effects";
-// blink({duration: 2});
-Scene.blink({duration: 2});
+    <pre class="prettyprint"><code>import {blink} from "@scenejs/effects";
+// Scene.blink({duration: 2});
+blink({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -420,7 +420,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".fadeIn"><span class="type-signature">(static) </span>fadeIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+    <h4 class="name" id=".fadeIn"><span class="type-signature">(static) </span>fadeIn<span class="signature">(options<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -432,7 +432,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line233">line 233</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -497,6 +497,8 @@ new SceneItem({
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -507,7 +509,7 @@ new SceneItem({
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>options</code>?</td>
             
 
             <td class="type">
@@ -521,6 +523,12 @@ new SceneItem({
 
             
 
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last">
@@ -650,9 +658,9 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {fadeIn} from "@scenejs/effects";
-// fadeIn({duration: 2});
-Scene.fadeIn({duration: 2});
+    <pre class="prettyprint"><code>import { fadeIn } from "@scenejs/effects";
+// Scene.fadeIn({duration: 2});
+fadeIn({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -716,7 +724,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line260">line 260</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line265">line 265</a>
     </li></ul></dd>
     
 
@@ -942,9 +950,9 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {fadeOut} from "@scenejs/effects";
-// fadeOut({duration: 2});
-Scene.fadeOut({duration: 2});
+    <pre class="prettyprint"><code>import { fadeOut } from "@scenejs/effects";
+// Scene.fadeOut({duration: 2});
+fadeOut({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -996,6 +1004,1600 @@ new SceneItem({
 
     
 
+    <h4 class="name" id=".flip"><span class="type-signature">(static) </span>flip<span class="signature">(options<span class="signature-attributes">opt</span>, options.x<span class="signature-attributes">opt</span>, options.y<span class="signature-attributes">opt</span>, options.backside<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line317">line 317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    You can create a flip effect horizontally, vertically, or diagonally.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates the direction and amount to be moved by the x-axis.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates the direction and amount to be moved by the y-axis.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backside</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates whether to start from the back.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { flip } from "@scenejs/effects";
+
+// flip({ x: 1, y: 1, backside: false })
+flip()
+  .setDuration(1)
+  .setSelector("[data-flip] .target")
+  .play();
+flip({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flip] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".flipX"><span class="type-signature">(static) </span>flipX<span class="signature">(options<span class="signature-attributes">opt</span>, options.x<span class="signature-attributes">opt</span>, options.backside<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line374">line 374</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    You can create an effect that flips vertically around the x-axis.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates the direction and amount of movement.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backside</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates whether to start from the back.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { flip, flipX } from "@scenejs/effects";
+
+// flip({ x: 1, y: 0, backside: false })
+// flipX({ x: 1, backside: false })
+flipX()
+  .setDuration(1)
+  .setSelector("[data-flipx] .target")
+  .play();
+flipX({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flipx] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".flipY"><span class="type-signature">(static) </span>flipY<span class="signature">(options<span class="signature-attributes">opt</span>, options.y<span class="signature-attributes">opt</span>, options.backside<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line404">line 404</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    You can create an effect that flips horizontally around the y-axis.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates the direction and amount of movement.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backside</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last">Indicates whether to start from the back.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { flip, flipY } from "@scenejs/effects";
+
+// flip({ x: 0, y: 1, backside: false })
+// flipY({ y: 1, backside: false })
+flipY()
+  .setDuration(1)
+  .setSelector("[data-flipy] .target")
+  .play();
+flipY({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flipy] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".shake"><span class="type-signature">(static) </span>shake<span class="signature">(options<span class="signature-attributes">opt</span>, options.properties<span class="signature-attributes">opt</span>, options.frequency<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line447">line 447</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Make a shake effect.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>properties</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>"transform: translateX(5px) translateY (5px) rotate(5deg)"</code>
+                
+                </td>
+            
+
+            <td class="description last">The range of properties to be moved.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>frequency</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>10</code>
+                
+                </td>
+            
+
+            <td class="description last">frequency of shakes</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { shake } from "@scenejs/effects";
+
+shake()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shake] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateX: ["-5px", "5px"]
+        translateX: "5px",
+        translateY: ["-5px", "5px"],
+        rotate: "5deg",
+        // set range
+        scale: [0.8, 1],
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shake] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".shakeX"><span class="type-signature">(static) </span>shakeX<span class="signature">(options<span class="signature-attributes">opt</span>, options.x<span class="signature-attributes">opt</span>, options.frequency<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line521">line 521</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Make a horizontal shake effect.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>["-5px", "5px"]</code>
+                
+                </td>
+            
+
+            <td class="description last">range of x's movement</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>frequency</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>10</code>
+                
+                </td>
+            
+
+            <td class="description last">frequency of shakes</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { shake, shakeX } from "@scenejs/effects";
+
+// shakeX({ x: ["-5px", "5px"], frequency: 10 })
+shakeX()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakex] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateX: ["-5px", "5px"]
+        translateX: "5px",
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakex] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".shakeY"><span class="type-signature">(static) </span>shakeY<span class="signature">(options<span class="signature-attributes">opt</span>, options.y<span class="signature-attributes">opt</span>, options.frequency<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line567">line 567</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Make a vertical shake effect.
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Partial&lt;<a href="Effects.html#.EffectState">EffectState</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>["-5px", "5px"]</code>
+                
+                </td>
+            
+
+            <td class="description last">range of y's movement</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>frequency</code>?</td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>10</code>
+                
+                </td>
+            
+
+            <td class="description last">frequency of shakes</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import { shake, shakeY } from "@scenejs/effects";
+
+// shakeY({ y: ["-5px", "5px"], frequency: 10 })
+shakeY()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakey] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateY: ["-5px", "5px"]
+        translateY: "5px",
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakey] .target2")
+  .play();</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id=".transition"><span class="type-signature">(static) </span>transition<span class="signature">(item1, item2, transitionObject)</span><span class="type-signature"> &rarr; {void}</span></h4>
 
     
@@ -1008,7 +2610,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line190">line 190</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -1223,7 +2825,7 @@ transitionScene.play();</code></pre>
 
     
 
-    <h4 class="name" id=".wipeIn"><span class="type-signature">(static) </span>wipeIn<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+    <h4 class="name" id=".wipeIn"><span class="type-signature">(static) </span>wipeIn<span class="signature">(options<span class="signature-attributes">opt</span>, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1235,7 +2837,7 @@ transitionScene.play();</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line126">line 126</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line131">line 131</a>
     </li></ul></dd>
     
 
@@ -1300,6 +2902,8 @@ transitionScene.play();</code></pre>
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1310,7 +2914,7 @@ transitionScene.play();</code></pre>
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>options</code>?</td>
             
 
             <td class="type">
@@ -1324,6 +2928,12 @@ transitionScene.play();</code></pre>
 
             
 
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last">
@@ -1491,9 +3101,10 @@ transitionScene.play();</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {wipeIn} from "@scenejs/effects";
-// wipeIn({property: "left", duration: 2});
-Scene.wipeIn({property: "left", duration: 2});
+    <pre class="prettyprint"><code>import { wipeIn } from "@scenejs/effects";
+
+// Scene.wipeIn({ property: "left", duration: 2 });
+wipeIn({ property: "left", duration: 2 });
 // Same
 new SceneItem({
 	"0%": {
@@ -1545,7 +3156,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".wipeOut"><span class="type-signature">(static) </span>wipeOut<span class="signature">(options, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+    <h4 class="name" id=".wipeOut"><span class="type-signature">(static) </span>wipeOut<span class="signature">(options<span class="signature-attributes">opt</span>, options.property<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1557,7 +3168,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line154">line 154</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -1622,6 +3233,8 @@ new SceneItem({
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1632,7 +3245,7 @@ new SceneItem({
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>options</code>?</td>
             
 
             <td class="type">
@@ -1646,6 +3259,12 @@ new SceneItem({
 
             
 
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last">
@@ -1813,9 +3432,9 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {wipeOut} from "@scenejs/effects";
-// wipeOut({property: "left", duration: 2});
-Scene.wipeOut({property: "left", duration: 2});
+    <pre class="prettyprint"><code>import { wipeOut } from "@scenejs/effects";
+// Scene.wipeOut({property: "left", duration: 2});
+wipeOut({property: "left", duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -1867,7 +3486,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".zoomIn"><span class="type-signature">(static) </span>zoomIn<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+    <h4 class="name" id=".zoomIn"><span class="type-signature">(static) </span>zoomIn<span class="signature">(options<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -1879,7 +3498,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line71">line 71</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -1944,6 +3563,8 @@ new SceneItem({
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1954,7 +3575,7 @@ new SceneItem({
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>options</code>?</td>
             
 
             <td class="type">
@@ -1968,6 +3589,12 @@ new SceneItem({
 
             
 
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last">
@@ -2097,9 +3724,11 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {set, zoomIn} from "@scenejs/effects";
-// zoomIn({duration: 2});
-Scene.zoomIn({duration: 2});
+    <pre class="prettyprint"><code>import { zoomIn } from "@scenejs/effects";
+
+// Scene.zoomIn({duration: 2});
+zoomIn({duration: 2});
+
 // Same
 new SceneItem({
 	"0%": {
@@ -2151,7 +3780,7 @@ new SceneItem({
 
     
 
-    <h4 class="name" id=".zoomOut"><span class="type-signature">(static) </span>zoomOut<span class="signature">(options, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
+    <h4 class="name" id=".zoomOut"><span class="type-signature">(static) </span>zoomOut<span class="signature">(options<span class="signature-attributes">opt</span>, options.from<span class="signature-attributes">opt</span>, options.to<span class="signature-attributes">opt</span>, options.duration)</span><span class="type-signature"> &rarr; {<a href="https://daybrush.com/scenejs/release/latest/doc/SceneItem.html" target="_blank">SceneItem</a>}</span></h4>
 
     
 
@@ -2163,7 +3792,7 @@ new SceneItem({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line98">line 98</a>
+        <a href="effects.ts.html">effects.ts</a>, <a href="effects.ts.html#line102">line 102</a>
     </li></ul></dd>
     
 
@@ -2228,6 +3857,8 @@ new SceneItem({
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -2238,7 +3869,7 @@ new SceneItem({
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>options</code>?</td>
             
 
             <td class="type">
@@ -2252,6 +3883,12 @@ new SceneItem({
 
             
 
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last">
@@ -2381,9 +4018,10 @@ new SceneItem({
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// import {zoomOut} from "@scenejs/effects";
-// zoomOut({duration: 2});
-Scene.zoomOut({duration: 2});
+    <pre class="prettyprint"><code>import { zoomOut } from "@scenejs/effects";
+// Scene.zoomOut({ duration: 2 });
+zoomOut({ duration: 2 });
+
 // Same
 new SceneItem({
 	"0%": {
@@ -2596,7 +4234,7 @@ nav li[file="effects"] h4, nav li[file="effects"] ul {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Thu May 16 2019 03:13:33 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Fri May 17 2019 02:55:27 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
