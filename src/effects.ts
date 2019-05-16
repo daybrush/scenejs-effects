@@ -14,11 +14,12 @@ import { EffectState } from "./types";
  * @param - values of 100%
  * @example
 // import {set, blink} from "@scenejs/effects";
-// set("opacity", [0, 1, 0], {duration: 2});
-Scene.set("opacity", [0, 1, 0], {duration: 2});
+// Scene.set("opacity", [0, 1, 0], {duration: 2});
+set("opacity", [0, 1, 0], {duration: 2});
 
 // Same
-Scene.blink({duration: 2});
+// Scene.blink({duration: 2});
+blink({ duration: 2});
 
 // Same
 new SceneItem({
@@ -53,9 +54,11 @@ function set(property: string | string[], values: any[], options: Partial<Animat
  * @param {number}[options.to = 1] end zoom
  * @param {number} options.duration animation's duration
  * @example
-// import {set, zoomIn} from "@scenejs/effects";
-// zoomIn({duration: 2});
-Scene.zoomIn({duration: 2});
+import { zoomIn } from "@scenejs/effects";
+
+// Scene.zoomIn({duration: 2});
+zoomIn({duration: 2});
+
 // Same
 new SceneItem({
 	"0%": {
@@ -80,9 +83,10 @@ export function zoomIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneIt
  * @param {number}[options.to = 0] end zoom
  * @param {number} options.duration animation's duration
  * @example
-// import {zoomOut} from "@scenejs/effects";
-// zoomOut({duration: 2});
-Scene.zoomOut({duration: 2});
+import { zoomOut } from "@scenejs/effects";
+// Scene.zoomOut({ duration: 2 });
+zoomOut({ duration: 2 });
+
 // Same
 new SceneItem({
 	"0%": {
@@ -108,9 +112,10 @@ export function zoomOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneI
  * @param {number|string}[options.to = "0%"] end position
  * @param {number} options.duration animation's duration
  * @example
-// import {wipeIn} from "@scenejs/effects";
-// wipeIn({property: "left", duration: 2});
-Scene.wipeIn({property: "left", duration: 2});
+import { wipeIn } from "@scenejs/effects";
+
+// Scene.wipeIn({ property: "left", duration: 2 });
+wipeIn({ property: "left", duration: 2 });
 // Same
 new SceneItem({
 	"0%": {
@@ -136,9 +141,9 @@ export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial
  * @param {number|string}[options.to = "100%"] end position
  * @param {number} options.duration animation's duration
  * @example
-// import {wipeOut} from "@scenejs/effects";
-// wipeOut({property: "left", duration: 2});
-Scene.wipeOut({property: "left", duration: 2});
+import { wipeOut } from "@scenejs/effects";
+// Scene.wipeOut({property: "left", duration: 2});
+wipeOut({property: "left", duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -215,9 +220,9 @@ export function transition(
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {fadeIn} from "@scenejs/effects";
-// fadeIn({duration: 2});
-Scene.fadeIn({duration: 2});
+import { fadeIn } from "@scenejs/effects";
+// Scene.fadeIn({duration: 2});
+fadeIn({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -242,9 +247,9 @@ export function fadeIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneIt
  * @param {number}[options.to = 0] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {fadeOut} from "@scenejs/effects";
-// fadeOut({duration: 2});
-Scene.fadeOut({duration: 2});
+import { fadeOut } from "@scenejs/effects";
+// Scene.fadeOut({duration: 2});
+fadeOut({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -268,9 +273,9 @@ export function fadeOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneI
  * @param {number}[options.to = 1] end opacity
  * @param {number} options.duration animation's duration
  * @example
-// import {blink} from "@scenejs/effects";
-// blink({duration: 2});
-Scene.blink({duration: 2});
+import {blink} from "@scenejs/effects";
+// Scene.blink({duration: 2});
+blink({duration: 2});
 // Same
 new SceneItem({
 	"0%": {
@@ -289,6 +294,26 @@ new SceneItem({
 export function blink({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneItem {
     return set("opacity", [from, to, from], arguments[0]);
 }
+/**
+ * You can create a flip effect horizontally, vertically, or diagonally.
+ * @memberof Effects
+ * @param options
+ * @param {number} [options.x=1] - Indicates the direction and amount to be moved by the x-axis.
+ * @param {number} [options.y=1] - Indicates the direction and amount to be moved by the y-axis.
+ * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
+ * @example
+import { flip } from "@scenejs/effects";
+
+// flip({ x: 1, y: 1, backside: false })
+flip()
+  .setDuration(1)
+  .setSelector("[data-flip] .target")
+  .play();
+flip({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flip] .target2")
+  .play();
+ */
 export function flip({
     x = 1,
     y = 1,
@@ -326,6 +351,26 @@ export function flip({
     });
     return item;
 }
+/**
+ * You can create an effect that flips vertically around the x-axis.
+ * @memberof Effects
+ * @param options
+ * @param {number} [options.x=1] - Indicates the direction and amount of movement.
+ * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
+ * @example
+import { flip, flipX } from "@scenejs/effects";
+
+// flip({ x: 1, y: 0, backside: false })
+// flipX({ x: 1, backside: false })
+flipX()
+  .setDuration(1)
+  .setSelector("[data-flipx] .target")
+  .play();
+flipX({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flipx] .target2")
+  .play();
+ */
 export function flipX({
     x = 1,
     backside = false,
@@ -336,6 +381,26 @@ export function flipX({
 
     return item;
 }
+/**
+ * You can create an effect that flips horizontally around the y-axis.
+ * @memberof Effects
+ * @param options
+ * @param {number} [options.y=1] - Indicates the direction and amount of movement.
+ * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
+ * @example
+import { flip, flipY } from "@scenejs/effects";
+
+// flip({ x: 0, y: 1, backside: false })
+// flipY({ y: 1, backside: false })
+flipY()
+  .setDuration(1)
+  .setSelector("[data-flipy] .target")
+  .play();
+flipY({ backside: true })
+  .setDuration(1)
+  .setSelector("[data-flipy] .target2")
+  .play();
+ */
 export function flipY({
     y = 1,
     backside = false,
@@ -345,6 +410,40 @@ export function flipY({
     item.setOptions(arguments[0]);
     return item;
 }
+
+/**
+ * Make a shake effect.
+ * @memberof Effects
+ * @param options
+ * @param {object|string} [options.properties="transform: translateX(5px) translateY (5px) rotate(5deg)"] - The range of properties to be moved.
+ * @param {number} [options.frequency=10] - frequency of shakes
+ * @example
+import { shake } from "@scenejs/effects";
+
+shake()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shake] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateX: ["-5px", "5px"]
+        translateX: "5px",
+        translateY: ["-5px", "5px"],
+        rotate: "5deg",
+        // set range
+        scale: [0.8, 1],
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shake] .target2")
+  .play();
+ */
 export function shake({
     properties = {
         transform: {
@@ -353,7 +452,7 @@ export function shake({
             rotate: [`-10deg`, `10deg`],
         },
     },
-    length = 10,
+    frequency = 10,
 }: Partial<EffectState> = {}): SceneItem {
     const item = new SceneItem({}, arguments[0]);
     const frame = new Frame(properties);
@@ -381,16 +480,47 @@ export function shake({
         item.set(`0%`, ...propertyNames, `${(start + end) / 2}${unit}`);
         item.set(`100%`, ...propertyNames, `${(start + end) / 2}${unit}`);
 
-        for (let j = 1; j <= length; ++j) {
+        for (let j = 1; j <= frequency; ++j) {
             const ratio = Math.random() * (end - start) + start;
-            item.set(`${j / (length + 1) * 100}%`, ...propertyNames, `${ratio}${unit}`);
+            item.set(`${j / (frequency + 1) * 100}%`, ...propertyNames, `${ratio}${unit}`);
         }
     });
     return item;
 }
+
+/**
+ * Make a horizontal shake effect.
+ * @memberof Effects
+ * @param options
+ * @param {string|string[]} [options.x=["-5px", "5px"]] - range of x's movement
+ * @param {number} [options.frequency=10] - frequency of shakes
+ * @example
+import { shake, shakeX } from "@scenejs/effects";
+
+// shakeX({ x: ["-5px", "5px"], frequency: 10 })
+shakeX()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakex] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateX: ["-5px", "5px"]
+        translateX: "5px",
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakex] .target2")
+  .play();
+ */
 export function shakeX({
     x = ["-5px", "5px"],
-    length = 10,
+    frequency = 10,
 }: Partial<EffectState> = {}) {
     const item = shake({
         properties: {
@@ -398,16 +528,45 @@ export function shakeX({
                 translateX: x,
             },
         },
-        length,
+        frequency,
     });
     item.setOptions(arguments[0]);
 
     return item;
 }
+/**
+ * Make a vertical shake effect.
+ * @memberof Effects
+ * @param options
+ * @param {string|string[]} [options.y=["-5px", "5px"]] - range of y's movement
+ * @param {number} [options.frequency=10] - frequency of shakes
+ * @example
+import { shake, shakeY } from "@scenejs/effects";
 
+// shakeY({ y: ["-5px", "5px"], frequency: 10 })
+shakeY()
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakey] .target")
+  .play();
+
+shake({
+    properties: {
+      transform: {
+        // translateY: ["-5px", "5px"]
+        translateY: "5px",
+      },
+    },
+    frequency: 10,
+  })
+  .setDuration(0.2)
+  .setIterationCount("infinite")
+  .setSelector("[data-shakey] .target2")
+  .play();
+ */
 export function shakeY({
     y = ["-5px", "5px"],
-    length = 10,
+    frequency = 10,
 }: Partial<EffectState> = {}) {
     const item = shake({
         properties: {
@@ -415,7 +574,7 @@ export function shakeY({
                 translateY: y,
             },
         },
-        length,
+        frequency,
     });
     item.setOptions(arguments[0]);
 
