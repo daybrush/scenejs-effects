@@ -15,6 +15,7 @@ export default builder([
         outputOptions: {
             extend: true,
         },
+        resolve: true,
     },
     {
         external,
@@ -25,6 +26,7 @@ export default builder([
         outputOptions: {
             extend: true,
         },
+        resolve: true,
         uglify: true,
     },
     {
@@ -33,5 +35,12 @@ export default builder([
         output: "./dist/effects.esm.js",
         exports: "named",
         format: "es",
+    },
+    {
+        external,
+        input: "src/index.ts",
+        output: "./dist/effects.cjs.js",
+        exports: "named",
+        format: "cjs",
     },
 ]);

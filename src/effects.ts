@@ -1,5 +1,5 @@
 import { SceneItem, AnimatorState, Frame } from "scenejs";
-import { IObject, isArray, splitUnit, dot } from "@daybrush/utils";
+import { IObject, isArray, splitUnit } from "@daybrush/utils";
 import { EffectState } from "./types";
 
 /**

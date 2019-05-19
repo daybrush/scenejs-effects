@@ -2,7 +2,7 @@
   "name": "@scenejs/effects",
   "version": "0.0.2",
   "description": "new project",
-  "main": "./dist/effects.js",
+  "main": "./dist/effects.cjs.js",
   "module": "./dist/effects.esm.js",
   "sideEffects": false,
   "types": "declaration/index.d.ts",
