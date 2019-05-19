@@ -7,10 +7,74 @@ repository: git+https://github.com/daybrush/scenejs-effects.git
 version: 0.0.2
 */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('scenejs'), require('@daybrush/utils')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'scenejs', '@daybrush/utils'], factory) :
-  (global = global || self, factory(global.Scene = global.Scene || {}, global.Scene, global.utils));
-}(this, function (exports, scenejs, utils) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('scenejs')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'scenejs'], factory) :
+  (global = global || self, factory(global.Scene = global.Scene || {}, global.Scene));
+}(this, function (exports, scenejs) { 'use strict';
+
+  /*
+  Copyright (c) 2018 Daybrush
+  @name: @daybrush/utils
+  license: MIT
+  author: Daybrush
+  repository: https://github.com/daybrush/utils
+  @version 0.8.0
+  */
+  /**
+  * Check the type that the value is isArray.
+  * @memberof Utils
+  * @param {string} value - Value to check the type
+  * @return {} true if the type is correct, false otherwise
+  * @example
+  import {isArray} from "@daybrush/utils";
+
+  console.log(isArray([])); // true
+  console.log(isArray({})); // false
+  console.log(isArray(undefined)); // false
+  console.log(isArray(null)); // false
+  */
+
+
+  function isArray(value) {
+    return Array.isArray(value);
+  }
+  /**
+  * divide text by number and unit.
+  * @memberof Utils
+  * @param {string} text - text to divide
+  * @return {} divided texts
+  * @example
+  import {splitUnit} from "@daybrush/utils";
+
+  console.log(splitUnit("10px"));
+  // {prefix: "", value: 10, unit: "px"}
+  console.log(splitUnit("-10px"));
+  // {prefix: "", value: -10, unit: "px"}
+  console.log(splitUnit("a10%"));
+  // {prefix: "a", value: 10, unit: "%"}
+  */
+
+
+  function splitUnit(text) {
+    var matches = /^([^\d|e|\-|\+]*)((?:\d|\.|-|e-|e\+)+)(\S*)$/g.exec(text);
+
+    if (!matches) {
+      return {
+        prefix: "",
+        unit: "",
+        value: NaN
+      };
+    }
+
+    var prefix = matches[1];
+    var value = matches[2];
+    var unit = matches[3];
+    return {
+      prefix: prefix,
+      unit: unit,
+      value: parseFloat(value)
+    };
+  }
 
   /**
    * @namespace Effects
@@ -539,16 +603,16 @@ version: 0.0.2
       var end = 0;
       var unit = "";
 
-      if (utils.isArray(value)) {
-        var _a = utils.splitUnit(value[0]),
+      if (isArray(value)) {
+        var _a = splitUnit(value[0]),
             startNumber = _a.value,
             startUnit = _a.unit;
 
         unit = startUnit;
         start = startNumber;
-        end = utils.splitUnit(value[1]).value;
+        end = splitUnit(value[1]).value;
       } else {
-        var _b = utils.splitUnit(value),
+        var _b = splitUnit(value),
             valueNumber = _b.value,
             valueUnit = _b.unit;
 
