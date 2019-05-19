@@ -23,7 +23,12 @@ $ npm install @scenejs/effects
 * [blink](https://daybrush.com/scenejs/features.html#bllink)
 * [fadeIn](https://daybrush.com/scenejs/features.html#fadein)
 * [fadeOut](https://daybrush.com/scenejs/features.html#fadeout)
+* [flip](https://daybrush.com/scenejs/features.html#flip)
+* [flipX](https://daybrush.com/scenejs/features.html#flipx)
+* [flipY](https://daybrush.com/scenejs/features.html#flipy)
 * [shake](https://daybrush.com/scenejs/features.html#shake)
+* [shakeX](https://daybrush.com/scenejs/features.html#shakex)
+* [shakeY](https://daybrush.com/scenejs/features.html#shakey)
 * [transition](https://daybrush.com/scenejs/features.html#transition)
 
 ```
