@@ -13,7 +13,8 @@
         "doc": "rm -rf ./doc && jsdoc -c jsdoc.json",
         "release:build": "npm run build && npm run doc && prerelease --dirs=dist,doc",
         "release": "npm run build && npm run doc && release --dirs=dist,doc",
-        "release:init": "npm run build && release -i --dirs=dist,doc"
+        "release:init": "npm run build && release -i --dirs=dist,doc",
+        "deploy": "gh-pages -d ./demo --dest=./ --add --remote origin"
     },
     "repository": {
         "type": "git",
@@ -34,6 +35,7 @@
         "@daybrush/jsdoc": "^0.3.7",
         "@daybrush/release": "^0.2.4",
         "daybrush-jsdoc-template": "^1.5.3",
+        "gh-pages": "^2.0.1",
         "print-sizes": "0.0.4",
         "tslint": "^5.16.0",
         "typescript": "^3.4.5"
