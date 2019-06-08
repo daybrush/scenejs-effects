@@ -1,10 +1,10 @@
 /*
-Copyright (c) Daybrush
+Copyright (c) 2019 Daybrush
 name: @scenejs/effects
 license: MIT
 author: Daybrush
 repository: git+https://github.com/daybrush/scenejs-effects.git
-version: 0.1.0
+version: 0.0.6
 */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('scenejs')) :
@@ -34,6 +34,7 @@ version: 0.1.0
   console.log(isArray(null)); // false
   */
 
+
   function isArray(value) {
     return Array.isArray(value);
   }
@@ -52,6 +53,7 @@ version: 0.1.0
   console.log(splitUnit("a10%"));
   // {prefix: "a", value: 10, unit: "%"}
   */
+
 
   function splitUnit(text) {
     var matches = /^([^\d|e|\-|\+]*)((?:\d|\.|-|e-|e\+)+)(\S*)$/g.exec(text);

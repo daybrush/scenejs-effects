@@ -1,10 +1,10 @@
 /*
-Copyright (c) Daybrush
+Copyright (c) 2019 Daybrush
 name: @scenejs/effects
 license: MIT
 author: Daybrush
 repository: git+https://github.com/daybrush/scenejs-effects.git
-version: 0.1.0
+version: 0.0.6
 */
 'use strict';
 
