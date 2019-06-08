@@ -27,7 +27,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="Effects.html">Effects</a><h4><a href="Effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="Effects.html#.blink">blink</a></li><li data-type='method'><a href="Effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="Effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="Effects.html#.flip">flip</a></li><li data-type='method'><a href="Effects.html#.flipX">flipX</a></li><li data-type='method'><a href="Effects.html#.flipY">flipY</a></li><li data-type='method'><a href="Effects.html#.shake">shake</a></li><li data-type='method'><a href="Effects.html#.shakeX">shakeX</a></li><li data-type='method'><a href="Effects.html#.shakeY">shakeY</a></li><li data-type='method'><a href="Effects.html#.transition">transition</a></li><li data-type='method'><a href="Effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="Effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="Effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="Effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="Effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="Effects.html#.EffectState">EffectState</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/scenejs-effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.flip">flip</a></li><li data-type='method'><a href="effects.html#.flipX">flipX</a></li><li data-type='method'><a href="effects.html#.flipY">flipY</a></li><li data-type='method'><a href="effects.html#.shake">shake</a></li><li data-type='method'><a href="effects.html#.shakeX">shakeX</a></li><li data-type='method'><a href="effects.html#.shakeY">shakeY</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="effects.html#.EffectState">EffectState</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -47,12 +47,12 @@ import { IObject, isArray, splitUnit } from "@daybrush/utils";
 import { EffectState } from "./types";
 
 /**
- * @namespace Effects
+ * @namespace effects
  */
 
 /**
  * Use the property to create an effect.
- * @memberof Effects
+ * @memberof effects
  * @private
  * @param - property to set effect
  * @param - values of 100%
@@ -92,7 +92,7 @@ function set(property: string | string[], values: any[], options: Partial&lt;Ani
 
 /**
  * Make a zoom in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start zoom
  * @param {number}[options.to = 1] end zoom
@@ -121,7 +121,7 @@ export function zoomIn({ from = 0, to = 1 }: Partial&lt;EffectState> = {}): Scen
 
 /**
  * Make a zoom out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 1] start zoom
  * @param {number}[options.to = 0] end zoom
@@ -149,7 +149,7 @@ export function zoomOut({ from = 1, to = 0 }: Partial&lt;EffectState> = {}): Sce
 
 /**
  * Make a wipe in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "-100%"] start position
@@ -178,7 +178,7 @@ export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial
 
 /**
  * Make a wipe out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "0%"] start position
@@ -206,7 +206,7 @@ export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial
 
 /**
  * Switch the scene from `item1` to `item2`.
- * @memberof Effects
+ * @memberof effects
  * @param - Item that end effect
  * @param - Item that start effect
  * @param -  `transitionItem` or `transitionObject` to switch from `item1` to `item2`
@@ -258,7 +258,7 @@ export function transition(
 
 /**
  * Make a fade in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
@@ -285,7 +285,7 @@ export function fadeIn({ from = 0, to = 1 }: Partial&lt;EffectState> = {}): Scen
 
 /**
  * Make a fade out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 1] start opacity
  * @param {number}[options.to = 0] end opacity
@@ -311,7 +311,7 @@ export function fadeOut({ from = 1, to = 0 }: Partial&lt;EffectState> = {}): Sce
 }
 /**
  * Make a blinking effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
@@ -340,7 +340,7 @@ export function blink({ from = 0, to = 1 }: Partial&lt;EffectState> = {}): Scene
 }
 /**
  * You can create a flip effect horizontally, vertically, or diagonally.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.x=1] - Indicates the direction and amount to be moved by the x-axis.
  * @param {number} [options.y=1] - Indicates the direction and amount to be moved by the y-axis.
@@ -397,7 +397,7 @@ export function flip({
 }
 /**
  * You can create an effect that flips vertically around the x-axis.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.x=1] - Indicates the direction and amount of movement.
  * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
@@ -427,7 +427,7 @@ export function flipX({
 }
 /**
  * You can create an effect that flips horizontally around the y-axis.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.y=1] - Indicates the direction and amount of movement.
  * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
@@ -457,7 +457,7 @@ export function flipY({
 
 /**
  * Make a shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {object|string} [options.properties="transform: translateX(5px) translateY (5px) rotate(5deg)"] - The range of properties to be moved.
  * @param {number} [options.frequency=10] - frequency of shakes
@@ -534,7 +534,7 @@ export function shake({
 
 /**
  * Make a horizontal shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.x=["-5px", "5px"]] - range of x's movement
  * @param {number} [options.frequency=10] - frequency of shakes
@@ -580,7 +580,7 @@ export function shakeX({
 }
 /**
  * Make a vertical shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.y=["-5px", "5px"]] - range of y's movement
  * @param {number} [options.frequency=10] - frequency of shakes
@@ -648,7 +648,7 @@ nav li[file="effects"] h4, nav li[file="effects"] ul {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Thu May 30 2019 18:41:31 GMT+0900 (Korean Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Sat Jun 08 2019 22:31:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
