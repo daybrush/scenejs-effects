@@ -29,7 +29,7 @@
     "docdash": {
         "menu": {
             "Github repo": {
-                "href": "https://github.com/daybrush/effects",
+                "href": "https://github.com/daybrush/scenejs-effects",
                 "target": "_blank",
                 "class": "menu-item",
                 "id": "repository"

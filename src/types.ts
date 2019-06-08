@@ -3,7 +3,7 @@ import { SceneItemState } from "scenejs";
 /**
  * interface EffectState extends SceneItemState
  * @typedef
- * @memberof Effects
+ * @memberof effects
  * @see SceneItemState
  */
 export interface EffectState extends SceneItemState {

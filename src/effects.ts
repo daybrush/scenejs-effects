@@ -3,12 +3,12 @@ import { IObject, isArray, splitUnit } from "@daybrush/utils";
 import { EffectState } from "./types";
 
 /**
- * @namespace Effects
+ * @namespace effects
  */
 
 /**
  * Use the property to create an effect.
- * @memberof Effects
+ * @memberof effects
  * @private
  * @param - property to set effect
  * @param - values of 100%
@@ -48,7 +48,7 @@ function set(property: string | string[], values: any[], options: Partial<Animat
 
 /**
  * Make a zoom in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start zoom
  * @param {number}[options.to = 1] end zoom
@@ -77,7 +77,7 @@ export function zoomIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneIt
 
 /**
  * Make a zoom out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 1] start zoom
  * @param {number}[options.to = 0] end zoom
@@ -105,7 +105,7 @@ export function zoomOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneI
 
 /**
  * Make a wipe in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "-100%"] start position
@@ -134,7 +134,7 @@ export function wipeIn({ from = "-100%", to = "0%", property = "left" }: Partial
 
 /**
  * Make a wipe out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.property = "left"] position property
  * @param {number|string} [options.from = "0%"] start position
@@ -162,7 +162,7 @@ export function wipeOut({ from = "0%", to = "100%", property = "left" }: Partial
 
 /**
  * Switch the scene from `item1` to `item2`.
- * @memberof Effects
+ * @memberof effects
  * @param - Item that end effect
  * @param - Item that start effect
  * @param -  `transitionItem` or `transitionObject` to switch from `item1` to `item2`
@@ -214,7 +214,7 @@ export function transition(
 
 /**
  * Make a fade in effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
@@ -241,7 +241,7 @@ export function fadeIn({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneIt
 
 /**
  * Make a fade out effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 1] start opacity
  * @param {number}[options.to = 0] end opacity
@@ -267,7 +267,7 @@ export function fadeOut({ from = 1, to = 0 }: Partial<EffectState> = {}): SceneI
 }
 /**
  * Make a blinking effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.from = 0] start opacity
  * @param {number}[options.to = 1] end opacity
@@ -296,7 +296,7 @@ export function blink({ from = 0, to = 1 }: Partial<EffectState> = {}): SceneIte
 }
 /**
  * You can create a flip effect horizontally, vertically, or diagonally.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.x=1] - Indicates the direction and amount to be moved by the x-axis.
  * @param {number} [options.y=1] - Indicates the direction and amount to be moved by the y-axis.
@@ -353,7 +353,7 @@ export function flip({
 }
 /**
  * You can create an effect that flips vertically around the x-axis.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.x=1] - Indicates the direction and amount of movement.
  * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
@@ -383,7 +383,7 @@ export function flipX({
 }
 /**
  * You can create an effect that flips horizontally around the y-axis.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {number} [options.y=1] - Indicates the direction and amount of movement.
  * @param {boolean} [options.backside=false] - Indicates whether to start from the back.
@@ -413,7 +413,7 @@ export function flipY({
 
 /**
  * Make a shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {object|string} [options.properties="transform: translateX(5px) translateY (5px) rotate(5deg)"] - The range of properties to be moved.
  * @param {number} [options.frequency=10] - frequency of shakes
@@ -490,7 +490,7 @@ export function shake({
 
 /**
  * Make a horizontal shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.x=["-5px", "5px"]] - range of x's movement
  * @param {number} [options.frequency=10] - frequency of shakes
@@ -536,7 +536,7 @@ export function shakeX({
 }
 /**
  * Make a vertical shake effect.
- * @memberof Effects
+ * @memberof effects
  * @param options
  * @param {string|string[]} [options.y=["-5px", "5px"]] - range of y's movement
  * @param {number} [options.frequency=10] - frequency of shakes
