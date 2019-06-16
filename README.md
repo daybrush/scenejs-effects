@@ -35,37 +35,37 @@ Scene
 ## Effects
 
 * [**shake**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shake): Make a shake effect. ([CodePen](https://codepen.io/daybrush/pen/NZNRYv))<br/>
-[![](./demo/images/shake.gif)](https://daybrush.com/scenejs/features.html#shake)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shake.gif)](https://daybrush.com/scenejs/features.html#shake)
 
 * [**shakeX**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shakeX): Make a horizontal shake effect. ([CodePen](https://codepen.io/daybrush/pen/orxzPN))<br/>
-[![](./demo/images/shakex.gif)](https://daybrush.com/scenejs/features.html#shakex)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shakex.gif)](https://daybrush.com/scenejs/features.html#shakex)
 
 * [**shakeY**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shakeY): Make a vertical shake effect. ([CodePen](https://codepen.io/daybrush/pen/NZNRLa))<br/>
-[![](./demo/images/shakey.gif)](https://daybrush.com/scenejs/features.html#shakey)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shakey.gif)](https://daybrush.com/scenejs/features.html#shakey)
 
 * [**flip**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.flip): You can create a flip effect horizontally, vertically, or diagonally. ([CodePen](https://codepen.io/daybrush/pen/EBKgeM))<br/>
-[![](./demo/images/flip.gif)](https://daybrush.com/scenejs/features.html#flip)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/flip.gif)](https://daybrush.com/scenejs/features.html#flip)
 
 * [**flipX**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.flipX): You can create an effect that flips vertically around the x-axis. ([CodePen](https://codepen.io/daybrush/pen/NZNRew))<br/>
-[![](./demo/images/flipx.gif)](https://daybrush.com/scenejs/features.html#flipx)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/flipx.gif)](https://daybrush.com/scenejs/features.html#flipx)
 
 * [**flipY**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.flipY): You can create an effect that flips horizontally around the y-axis. ([CodePen](https://codepen.io/daybrush/pen/VJaKNe))<br/>
-[![](./demo/images/flipY.gif)](https://daybrush.com/scenejs/features.html#flipy)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/flipy.gif)](https://daybrush.com/scenejs/features.html#flipy)
 
 * [**fadeIn**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.fadeIn): Make a fade in effect. ([CodePen](https://codepen.io/daybrush/pen/gNrwJm))<br/>
-[![](./demo/images/fadein.gif)](https://daybrush.com/scenejs/features.html#fadein)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/fadein.gif)](https://daybrush.com/scenejs/features.html#fadein)
 
 * [**fadeOut**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.fadeOut): Make a fade out effect. ([CodePen](https://codepen.io/daybrush/pen/pXyEmZ))<br/>
-[![](./demo/images/fadeout.gif)](https://daybrush.com/scenejs/features.html#fadeout)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/fadeout.gif)](https://daybrush.com/scenejs/features.html#fadeout)
 
 * [**blink**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.blink): Make a blink effect. ([CodePen](https://codepen.io/daybrush/pen/MMyKRP))<br/>
-[![](./demo/images/blink.gif)](https://daybrush.com/scenejs/features.html#blink)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/blink.gif)](https://daybrush.com/scenejs/features.html#blink)
 
 * [**wipeIn**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.wipeIn): Make a wipe in effect. ([CodePen](https://codepen.io/daybrush/pen/LKNpjm))<br/>
-[![](./demo/images/wipein.gif)](https://daybrush.com/scenejs/features.html#wipein)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/wipein.gif)](https://daybrush.com/scenejs/features.html#wipein)
 
 * [**wipeOut**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.wipeOut): Make a wipe out effect. ([CodePen](https://codepen.io/daybrush/pen/KjzgOB))<br/>
-[![](./demo/images/wipeout.gif)](https://daybrush.com/scenejs/features.html#wipeout)
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/wipeout.gif)](https://daybrush.com/scenejs/features.html#wipeout)
 
 
 ## License
