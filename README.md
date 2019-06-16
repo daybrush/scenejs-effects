@@ -33,6 +33,8 @@ Scene
 ```
 
 ## Effects
+* [**typing**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.typing): Make a typing effect that is typed one character at a time like a typewriter. ([CodePen](https://codepen.io/daybrush/pen/ydOVPW))<br/>
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/typing.gif)](https://daybrush.com/scenejs/features.html#typing)
 
 * [**shake**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shake): Make a shake effect. ([CodePen](https://codepen.io/daybrush/pen/NZNRYv))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shake.gif)](https://daybrush.com/scenejs/features.html#shake)

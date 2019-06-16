@@ -580,3 +580,45 @@ export function shakeY({
 
     return item;
 }
+
+/**
+ * Make a typing effect that is typed one character at a time like a typewriter.
+ * The `html` property only works with javascript animations.
+ * The `content` property of CSS animations works only on desktop Chrome.
+ * @memberof effects
+ * @param options
+ * @param {string|string[]} [options.property=["html"]] - Property to apply the typing animation
+ * @param {string} [options.text=""] - Text to type
+ * @param {number} [options.start=0] - Index to start typing
+ * @param {number} [options.end=0] - Index to end typing
+ * @example
+import { typing } from "@scenejs/effects";
+
+typing({ text: "Make a typing effect with Scene.js."})
+  .setDuration(7)
+  .setSelector(".target")
+  .play();
+ */
+export function typing({
+    property = ["html"],
+    text= "",
+    start = 0,
+    end = text.length,
+}: Partial<EffectState> = {}) {
+    const properties = [].concat(property);
+    const item = new SceneItem();
+    const length = Math.abs(end - start);
+
+    if (start < end) {
+        for (let i = start; i < end; ++i) {
+            item.set(`${i / length * 100}%`, ...properties, text.substring(start, i));
+        }
+    } else {
+        for (let i = end; i < start; ++i) {
+            item.set(`${i / length * 100}%`, ...properties, text.substring(end, start + end - i));
+        }
+    }
+    item.setOptions(arguments[0]);
+
+    return item;
+}
