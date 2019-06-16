@@ -6,7 +6,7 @@
 
 <p align="middle">🎬 Effect collection library where you can add effects with <a href="https://github.com/daybrush/scenejs" target="_blank"><strong>Scene.js</strong></a></p>
 
-<p align="middle"><a href="https://github.com/daybrush/scenejs"><strong>Scene.js</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs-effects/release/latest/doc"><strong>API</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs/features.html#effects"><strong>Features</strong></a> &nbsp;/&nbsp; <a href="https://codepen.io/collection/XwqoGW/"><strong>Examples</strong></a></p>
+<p align="middle"><a href="https://github.com/daybrush/scenejs"><strong>About Scene.js</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs-effects/release/latest/doc"><strong>API</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs/features.html#effects"><strong>Features</strong></a> &nbsp;/&nbsp; <a href="https://codepen.io/collection/XwqoGW/"><strong>Examples</strong></a></p>
 <br/>
 
 ## Installation

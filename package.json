@@ -28,7 +28,7 @@
     "homepage": "https://github.com/daybrush/scenejs-effects#readme",
     "dependencies": {
         "@daybrush/utils": "^0.10.0",
-        "scenejs": "^1.0.0"
+        "scenejs": "^1.1.0"
     },
     "devDependencies": {
         "@daybrush/builder": "^0.1.0",
