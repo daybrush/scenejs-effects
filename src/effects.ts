@@ -607,15 +607,15 @@ export function typing({
 }: Partial<EffectState> = {}) {
     const properties = [].concat(property);
     const item = new SceneItem();
-    const length = Math.abs(end - start);
+    const length = Math.abs(end - start) + 1;
 
     if (start < end) {
-        for (let i = start; i < end; ++i) {
-            item.set(`${i / length * 100}%`, ...properties, text.substring(start, i));
+        for (let i = start; i <= end; ++i) {
+            item.set(`${(i - start) / length * 100}%`, ...properties, text.substring(start, i));
         }
     } else {
-        for (let i = end; i < start; ++i) {
-            item.set(`${i / length * 100}%`, ...properties, text.substring(end, start + end - i));
+        for (let i = end; i <= start; ++i) {
+            item.set(`${(i - end) / length * 100}%`, ...properties, text.substring(end, start + end - i));
         }
     }
     item.setOptions(arguments[0]);
