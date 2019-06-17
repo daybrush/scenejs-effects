@@ -1,6 +1,6 @@
 {
     "name": "@scenejs/effects",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "new project",
     "main": "./dist/effects.cjs.js",
     "module": "./dist/effects.esm.js",
