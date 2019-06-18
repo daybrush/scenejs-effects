@@ -587,6 +587,29 @@ export function shakeY({
  * @param - The name of the keyframes(`CSSKeyframes​Rule`) in the stylesheet(`CSSStyleSheet`).
  * @param - SceneItem's options
  * @memberof effects
+ * @example
+`@keyframes keyframes {
+    0%, 7.69% {
+      border-width:35px;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    84.61% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+}`
+
+import { keyframer } from "@scenejs/effects";
+
+keyframer("keyframes", {
+    duration: 1,
+    iterationCount: "infinite",
+    selector: ".rect",
+}).play();
  */
 export function keyframer(name: string, options: Partial<SceneItemOptions>): SceneItem {
     return new SceneItem(getKeyframes(name), options);
