@@ -591,6 +591,9 @@ export function shakeY({
  * @param {string} [options.text=""] - Text to type
  * @param {number} [options.start=0] - Index to start typing
  * @param {number} [options.end=0] - Index to end typing
+ * @param {number} [options.prefix=""] - The prefix string to be attached before text
+ * @param {number} [options.suffix=""] - The suffix string to be attached after text
+
  * @example
 import { typing } from "@scenejs/effects";
 
@@ -601,9 +604,11 @@ typing({ text: "Make a typing effect with Scene.js."})
  */
 export function typing({
     property = ["html"],
-    text= "",
+    text = "",
     start = 0,
     end = text.length,
+    prefix = "",
+    suffix = "",
 }: Partial<EffectState> = {}) {
     const properties = [].concat(property);
     const item = new SceneItem();
@@ -611,11 +616,15 @@ export function typing({
 
     if (start < end) {
         for (let i = start; i <= end; ++i) {
-            item.set(`${(i - start) / length * 100}%`, ...properties, text.substring(start, i));
+            item.set(`${(i - start) / length * 100}%`, ...properties, `${prefix}${text.substring(start, i)}${suffix}`);
         }
     } else {
         for (let i = end; i <= start; ++i) {
-            item.set(`${(i - end) / length * 100}%`, ...properties, text.substring(end, start + end - i));
+            item.set(
+                `${(i - end) / length * 100}%`,
+                ...properties,
+                `${prefix}text.substring(end, start + end - i)${suffix}`,
+            );
         }
     }
     item.setOptions(arguments[0]);
