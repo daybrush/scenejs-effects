@@ -39,7 +39,7 @@ Scene
 * [**typing**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.typing): Make a typing effect that is typed one character at a time like a typewriter. ([CodePen](https://codepen.io/daybrush/pen/ydOVPW))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/typing.gif)](https://daybrush.com/scenejs/features.html#typing)
 
-* [**keyframes**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.keyframer): Make the CSS Keyframes Playable Animator(SceneItem). ([CodePen](https://codepen.io/daybrush/pen/XLjjBE))<br/>
+* [**keyframer**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.keyframer): Make the CSS Keyframes Playable Animator(SceneItem). ([CodePen](https://codepen.io/daybrush/pen/XLjjBE))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/keyframer.gif)](https://codepen.io/daybrush/pen/XLjjBE)
 ```html
 <style>
