@@ -1,6 +1,6 @@
 {
     "name": "@scenejs/effects",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "description": "new project",
     "main": "./dist/effects.cjs.js",
     "module": "./dist/effects.esm.js",
@@ -28,6 +28,7 @@
     "homepage": "https://github.com/daybrush/scenejs-effects#readme",
     "dependencies": {
         "@daybrush/utils": "^0.10.0",
+        "keyframer": "^0.1.0",
         "scenejs": "^1.1.0"
     },
     "devDependencies": {

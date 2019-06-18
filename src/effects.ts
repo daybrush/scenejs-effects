@@ -1,6 +1,7 @@
-import { SceneItem, AnimatorState, Frame } from "scenejs";
+import { SceneItem, AnimatorState, Frame, SceneItemOptions } from "scenejs";
 import { IObject, isArray, splitUnit } from "@daybrush/utils";
 import { EffectState } from "./types";
+import { getKeyframes } from "keyframer";
 
 /**
  * @namespace effects
@@ -580,6 +581,12 @@ export function shakeY({
 
     return item;
 }
+/**
+ * @memberof effects
+ */
+export function keyframes(name: string, options: Partial<SceneItemOptions>): SceneItem {
+    return new SceneItem(getKeyframes(name), options);
+}
 
 /**
  * Make a typing effect that is typed one character at a time like a typewriter.
@@ -609,7 +616,7 @@ export function typing({
     end = text.length,
     prefix = "",
     suffix = "",
-}: Partial<EffectState> = {}) {
+}: Partial<EffectState> = {}): SceneItem {
     const properties = [].concat(property);
     const item = new SceneItem();
     const length = Math.abs(end - start) + 1;
