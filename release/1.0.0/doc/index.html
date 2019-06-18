@@ -27,7 +27,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/scenejs-effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.flip">flip</a></li><li data-type='method'><a href="effects.html#.flipX">flipX</a></li><li data-type='method'><a href="effects.html#.flipY">flipY</a></li><li data-type='method'><a href="effects.html#.keyframes">keyframes</a></li><li data-type='method'><a href="effects.html#.kineticFrame">kineticFrame</a></li><li data-type='method'><a href="effects.html#.shake">shake</a></li><li data-type='method'><a href="effects.html#.shakeX">shakeX</a></li><li data-type='method'><a href="effects.html#.shakeY">shakeY</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.typing">typing</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="effects.html#.EffectState">EffectState</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2 class="custom"><a href="https://github.com/daybrush/scenejs-effects" target="_blank" class="menu-item" id="repository" >Github repo</a></h2><div class="search"><div class="input-area"><input type="text"/></div><button></button></div><ul class="namespaces"><li file="effects" class="parent"><a href="effects.html">effects</a><h4><a href="effects.html#static methods">Static Methods</a></h4><ul class='static methods'><li data-type='method'><a href="effects.html#.blink">blink</a></li><li data-type='method'><a href="effects.html#.fadeIn">fadeIn</a></li><li data-type='method'><a href="effects.html#.fadeOut">fadeOut</a></li><li data-type='method'><a href="effects.html#.flip">flip</a></li><li data-type='method'><a href="effects.html#.flipX">flipX</a></li><li data-type='method'><a href="effects.html#.flipY">flipY</a></li><li data-type='method'><a href="effects.html#.keyframer">keyframer</a></li><li data-type='method'><a href="effects.html#.kineticFrame">kineticFrame</a></li><li data-type='method'><a href="effects.html#.shake">shake</a></li><li data-type='method'><a href="effects.html#.shakeX">shakeX</a></li><li data-type='method'><a href="effects.html#.shakeY">shakeY</a></li><li data-type='method'><a href="effects.html#.transition">transition</a></li><li data-type='method'><a href="effects.html#.typing">typing</a></li><li data-type='method'><a href="effects.html#.wipeIn">wipeIn</a></li><li data-type='method'><a href="effects.html#.wipeOut">wipeOut</a></li><li data-type='method'><a href="effects.html#.zoomIn">zoomIn</a></li><li data-type='method'><a href="effects.html#.zoomOut">zoomOut</a></li></ul><h4><a href="effects.html#type definitions">Type Definitions</a></h4><ul class='type definitions'><li data-type='typddef'><a href="effects.html#.EffectState">EffectState</a></li><li data-type='typddef'><a href="effects.html#.KineticType">KineticType</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -78,9 +78,44 @@ Scene
 <h2>Effects</h2>
 <ul>
 <li>
+<p><a href="http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.kineticFrame"><strong>kineticFrame</strong></a>: Create a frame that moves the origin in the opposite direction as it moves through the transform. (<a href="https://codepen.io/daybrush/pen/NZrVGv">CodePen</a>)<br/>
+<a href="https://codepen.io/daybrush/pen/NZrVGv"><img src="https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/kineticFrame.gif" alt=""></a></p>
+</li>
+<li>
 <p><a href="http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.typing"><strong>typing</strong></a>: Make a typing effect that is typed one character at a time like a typewriter. (<a href="https://codepen.io/daybrush/pen/ydOVPW">CodePen</a>)<br/>
 <a href="https://daybrush.com/scenejs/features.html#typing"><img src="https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/typing.gif" alt=""></a></p>
 </li>
+<li>
+<p><a href="http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.keyframer"><strong>keyframes</strong></a>: Make the CSS Keyframes Playable Animator(SceneItem). (<a href="https://codepen.io/daybrush/pen/XLjjBE">CodePen</a>)<br/></p>
+</li>
+</ul>
+<pre class="prettyprint source lang-html"><code>&lt;style>
+@keyframes keyframes {
+    0%, 7.69% {
+      border-width:35px;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    84.61% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+}
+&lt;/style>
+</code></pre>
+<pre class="prettyprint source lang-js"><code>import { keyframer } from &quot;@scenejs/effects&quot;;
+
+keyframer(&quot;keyframes&quot;, {
+    duration: 1,
+    iterationCount: &quot;infinite&quot;,
+    selector: &quot;.rect&quot;,
+}).play();
+</code></pre>
+<p><a href="https://codepen.io/daybrush/pen/XLjjBE"><img src="https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/keyframer.gif" alt=""></a></p>
+<ul>
 <li>
 <p><a href="http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shake"><strong>shake</strong></a>: Make a shake effect. (<a href="https://codepen.io/daybrush/pen/NZNRYv">CodePen</a>)<br/>
 <a href="https://daybrush.com/scenejs/features.html#shake"><img src="https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shake.gif" alt=""></a></p>
@@ -162,7 +197,7 @@ nav li[file="home"] h4, nav li[file="home"] ul {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Wed Jun 19 2019 00:20:57 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/daybrush/jsdoc">JSDoc 0.3.7</a> on Wed Jun 19 2019 01:13:50 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -864,25 +864,48 @@ version: 1.0.0
     return item;
   }
   /**
+   * Make the CSS Keyframes Playable Animator(SceneItem).
+   * @see {@link https://github.com/daybrush/keyframer}
+   * @param - The name of the keyframes(`CSSKeyframes​Rule`) in the stylesheet(`CSSStyleSheet`).
+   * @param - SceneItem's options
    * @memberof effects
    */
 
-  function keyframes(name, options) {
+  function keyframer(name, options) {
     return new scenejs.SceneItem(getKeyframes(name), options);
   }
   /**
+   * Create a frame that moves the origin in the opposite direction as it moves through the transform.
    * @memberof effects
+   * @param options
+   * @param {string|string[]} [options.leftProperty=["transform", "translateX"]] - Property name corresponding to left
+   * @param {string|string[]} [options.topProperty=["transform", "translateY"]] - Property name corresponding to top
+   * @param {string|number} [options.left="0px"] - Numbers to move horizontally
+   * @param {string|number} [options.top="0px"] - Numbers to move vertically
+   * @example
+  import { SceneItem } from "scenejs";
+  import { kineticFrame } from "@scenejs/effects";
+
+  new SceneItem({
+      0: kineticFrame({ left: "0px", top: "0px" }).set({ transform: "rotate(0deg)"}),
+      1: kineticFrame({ left: "50px", top: "0px" }).set({ transform: "rotate(90deg)"}),
+      2: kineticFrame({ left: "50px", top: "50px" }).set({ transform: "rotate(180deg)"}),
+      3: kineticFrame({ left: "0px", top: "50px" }).set({ transform: "rotate(270deg)"}),
+      4: kineticFrame({ left: "0px", top: "0px" }).set({ transform: "rotate(360deg)"}),
+  }).setSelector(".target").play();
    */
 
   function kineticFrame(_a) {
-    var _b = _a.leftProperty,
-        leftProperty = _b === void 0 ? ["transform", "translateX"] : _b,
-        _c = _a.topProperty,
-        topProperty = _c === void 0 ? ["transform", "translateY"] : _c,
-        _d = _a.left,
-        left = _d === void 0 ? "0px" : _d,
-        _e = _a.top,
-        top = _e === void 0 ? "0px" : _e;
+    var _b = _a === void 0 ? {} : _a,
+        _c = _b.leftProperty,
+        leftProperty = _c === void 0 ? ["transform", "translateX"] : _c,
+        _d = _b.topProperty,
+        topProperty = _d === void 0 ? ["transform", "translateY"] : _d,
+        _e = _b.left,
+        left = _e === void 0 ? "0px" : _e,
+        _f = _b.top,
+        top = _f === void 0 ? "0px" : _f;
+
     var frame = new scenejs.Frame();
     frame.set.apply(frame, [].concat(leftProperty).concat([left]));
     frame.set.apply(frame, [].concat(topProperty).concat([top]));
@@ -950,7 +973,7 @@ version: 1.0.0
   exports.flip = flip;
   exports.flipX = flipX;
   exports.flipY = flipY;
-  exports.keyframes = keyframes;
+  exports.keyframer = keyframer;
   exports.kineticFrame = kineticFrame;
   exports.shake = shake;
   exports.shakeX = shakeX;
