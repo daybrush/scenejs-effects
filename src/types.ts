@@ -9,3 +9,13 @@ import { SceneItemState } from "scenejs";
 export interface EffectState extends SceneItemState {
     [key: string]: any;
 }
+/**
+ * @typedef
+ * @memberof effects
+ */
+export interface KineticType {
+    leftProperty: string | string[];
+    topProperty: string | string[];
+    left: string | number;
+    top: string | number;
+}
