@@ -1,6 +1,6 @@
 import { SceneItem, AnimatorState, Frame, SceneItemOptions } from "scenejs";
 import { IObject, isArray, splitUnit } from "@daybrush/utils";
-import { EffectState } from "./types";
+import { EffectState, KineticType } from "./types";
 import { getKeyframes } from "keyframer";
 
 /**
@@ -582,21 +582,42 @@ export function shakeY({
     return item;
 }
 /**
+ * Make the CSS Keyframes Playable Animator(SceneItem).
+ * @see {@link https://github.com/daybrush/keyframer}
+ * @param - The name of the keyframes(`CSSKeyframes​Rule`) in the stylesheet(`CSSStyleSheet`).
+ * @param - SceneItem's options
  * @memberof effects
  */
-export function keyframes(name: string, options: Partial<SceneItemOptions>): SceneItem {
+export function keyframer(name: string, options: Partial<SceneItemOptions>): SceneItem {
     return new SceneItem(getKeyframes(name), options);
 }
 
 /**
+ * Create a frame that moves the origin in the opposite direction as it moves through the transform.
  * @memberof effects
+ * @param options
+ * @param {string|string[]} [options.leftProperty=["transform", "translateX"]] - Property name corresponding to left
+ * @param {string|string[]} [options.topProperty=["transform", "translateY"]] - Property name corresponding to top
+ * @param {string|number} [options.left="0px"] - Numbers to move horizontally
+ * @param {string|number} [options.top="0px"] - Numbers to move vertically
+ * @example
+import { SceneItem } from "scenejs";
+import { kineticFrame } from "@scenejs/effects";
+
+new SceneItem({
+    0: kineticFrame({ left: "0px", top: "0px" }).set({ transform: "rotate(0deg)"}),
+    1: kineticFrame({ left: "50px", top: "0px" }).set({ transform: "rotate(90deg)"}),
+    2: kineticFrame({ left: "50px", top: "50px" }).set({ transform: "rotate(180deg)"}),
+    3: kineticFrame({ left: "0px", top: "50px" }).set({ transform: "rotate(270deg)"}),
+    4: kineticFrame({ left: "0px", top: "0px" }).set({ transform: "rotate(360deg)"}),
+}).setSelector(".target").play();
  */
 export function kineticFrame({
     leftProperty = ["transform", "translateX"],
     topProperty = ["transform", "translateY"],
     left = "0px",
     top = "0px",
-}): Frame {
+}: Partial<KineticType> = {}): Frame {
     const frame = new Frame();
 
     frame.set(...[].concat(leftProperty), left);
