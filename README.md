@@ -87,6 +87,9 @@ keyframer("keyframes", {
 * [**flipY**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.flipY): You can create an effect that flips horizontally around the y-axis. ([CodePen](https://codepen.io/daybrush/pen/VJaKNe))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/flipy.gif)](https://daybrush.com/scenejs/features.html#flipy)
 
+* [**transition**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.transition): Switch the scene from `item1` to `item2`. ([CodePen](https://codepen.io/daybrush/pen/QXKGam))<br/>
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/transition.gif)](https://daybrush.com/scenejs/features.html#transition)
+
 * [**fadeIn**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.fadeIn): Make a fade in effect. ([CodePen](https://codepen.io/daybrush/pen/gNrwJm))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/fadein.gif)](https://daybrush.com/scenejs/features.html#fadein)
 
