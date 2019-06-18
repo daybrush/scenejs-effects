@@ -4,12 +4,12 @@
 <p align="middle"><a href="https://badge.fury.io/js/%40scenejs%2Feffects" target="_blank"><img src="https://badge.fury.io/js/%40scenejs%2Feffects.svg" alt="npm version" height="18"/></a> <img src="https://img.shields.io/badge/language-typescript-blue.svg"/> <a href="https://github.com/daybrush/scenejs/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"/></a></p>
 
 
-<p align="middle">🎬 Effect collection library where you can add effects with <a href="https://github.com/daybrush/scenejs" target="_blank"><strong>Scene.js</strong></a></p>
+<p align="middle">🎬✨ Effect collection library where you can add effects with <a href="https://github.com/daybrush/scenejs" target="_blank"><strong>Scene.js</strong></a></p>
 
 <p align="middle"><a href="https://github.com/daybrush/scenejs"><strong>About Scene.js</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs-effects/release/latest/doc"><strong>API</strong></a> &nbsp;/&nbsp; <a href="https://daybrush.com/scenejs/features.html#effects"><strong>Features</strong></a> &nbsp;/&nbsp; <a href="https://codepen.io/collection/XwqoGW/"><strong>Examples</strong></a></p>
 <br/>
 
-## Installation
+## ⚙ ️Installation
 ### npm
 ```bash
 $ npm install @scenejs/effects
@@ -20,7 +20,7 @@ $ npm install @scenejs/effects
 <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.min.js"></script>
 ```
 
-## How to use
+## 🛠️ How to use
 ```ts
 import { shake, flip, fadeIn, wipeIn } from "@egjs/effects";
 
@@ -32,14 +32,15 @@ Scene
 
 ```
 
-## Effects
+## ✨ Effects
 * [**kineticFrame**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.kineticFrame): Create a frame that moves the origin in the opposite direction as it moves through the transform. ([CodePen](https://codepen.io/daybrush/pen/NZrVGv))<br/>
-[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/kineticFrame.gif)](https://codepen.io/daybrush/pen/NZrVGv)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/kineticFrame.gif)](https://codepen.io/daybrush/pen/NZrVGv)
 
 * [**typing**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.typing): Make a typing effect that is typed one character at a time like a typewriter. ([CodePen](https://codepen.io/daybrush/pen/ydOVPW))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/typing.gif)](https://daybrush.com/scenejs/features.html#typing)
 
 * [**keyframes**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.keyframer): Make the CSS Keyframes Playable Animator(SceneItem). ([CodePen](https://codepen.io/daybrush/pen/XLjjBE))<br/>
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/keyframer.gif)](https://codepen.io/daybrush/pen/XLjjBE)
 ```html
 <style>
 @keyframes keyframes {
@@ -67,7 +68,6 @@ keyframer("keyframes", {
     selector: ".rect",
 }).play();
 ```
-[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/keyframer.gif)](https://codepen.io/daybrush/pen/XLjjBE)
 
 * [**shake**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shake): Make a shake effect. ([CodePen](https://codepen.io/daybrush/pen/NZNRYv))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shake.gif)](https://daybrush.com/scenejs/features.html#shake)
@@ -103,7 +103,15 @@ keyframer("keyframes", {
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/wipeout.gif)](https://daybrush.com/scenejs/features.html#wipeout)
 
 
-## License
+## 👏 Contributing
+
+If you have any questions or requests or want to contribute to `scenejs` or other packages, please write the issue or give me a Pull Request freely.
+
+## 🐞 Bug Report
+
+If you find a bug, please report to us opening a new [Issues](https://github.com/daybrush/scenejs-effects/issues) on GitHub.
+
+## 📝 License
 
 ```
 MIT License
