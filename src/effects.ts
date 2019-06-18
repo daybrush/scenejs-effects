@@ -589,6 +589,24 @@ export function keyframes(name: string, options: Partial<SceneItemOptions>): Sce
 }
 
 /**
+ * @memberof effects
+ */
+export function kineticFrame({
+    leftProperty = ["transform", "translateX"],
+    topProperty = ["transform", "translateY"],
+    left = "0px",
+    top = "0px",
+}): Frame {
+    const frame = new Frame();
+
+    frame.set(...[].concat(leftProperty), left);
+    frame.set(...[].concat(topProperty), top);
+    frame.set("transform-origin", `calc(50% - ${left}) calc(50% - ${top})`);
+
+    return frame;
+}
+
+/**
  * Make a typing effect that is typed one character at a time like a typewriter.
  * The `html` property only works with javascript animations.
  * The `content` property of CSS animations works only on desktop Chrome.
