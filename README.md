@@ -33,8 +33,41 @@ Scene
 ```
 
 ## Effects
+* [**kineticFrame**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.kineticFrame): Create a frame that moves the origin in the opposite direction as it moves through the transform. ([CodePen](https://codepen.io/daybrush/pen/NZrVGv))<br/>
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/kineticFrame.gif)](https://codepen.io/daybrush/pen/NZrVGv)
+
 * [**typing**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.typing): Make a typing effect that is typed one character at a time like a typewriter. ([CodePen](https://codepen.io/daybrush/pen/ydOVPW))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/typing.gif)](https://daybrush.com/scenejs/features.html#typing)
+
+* [**keyframes**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.keyframer): Make the CSS Keyframes Playable Animator(SceneItem). ([CodePen](https://codepen.io/daybrush/pen/XLjjBE))<br/>
+```html
+<style>
+@keyframes keyframes {
+    0%, 7.69% {
+      border-width:35px;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    84.61% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      border-width: 0px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+}
+</style>
+```
+```js
+import { keyframer } from "@scenejs/effects";
+
+keyframer("keyframes", {
+    duration: 1,
+    iterationCount: "infinite",
+    selector: ".rect",
+}).play();
+```
+[![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/keyframer.gif)](https://codepen.io/daybrush/pen/XLjjBE)
 
 * [**shake**](http://daybrush.com/scenejs-effects/release/latest/doc/effects.html#.shake): Make a shake effect. ([CodePen](https://codepen.io/daybrush/pen/NZNRYv))<br/>
 [![](https://raw.githubusercontent.com/daybrush/scenejs-effects/master/demo/images/shake.gif)](https://daybrush.com/scenejs/features.html#shake)
