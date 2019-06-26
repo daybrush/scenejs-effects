@@ -1,7 +1,7 @@
 {
     "name": "@scenejs/effects",
-    "version": "1.0.0",
-    "description": "new project",
+    "version": "1.0.1",
+    "description": "Effect collection library where you can add effects with Scene.js",
     "main": "./dist/effects.cjs.js",
     "module": "./dist/effects.esm.js",
     "sideEffects": false,
@@ -22,6 +22,24 @@
     },
     "author": "Daybrush",
     "license": "MIT",
+    "keywords": [
+        "kinetic",
+        "typing",
+        "vfx",
+        "flip",
+        "transition",
+        "shake",
+        "scene",
+        "scene.js",
+        "scenejs",
+        "keyframes",
+        "timeline",
+        "animate",
+        "animation",
+        "css",
+        "requestAnimationFrame",
+        "motion"
+    ],
     "bugs": {
         "url": "https://github.com/daybrush/scenejs-effects/issues"
     },
