@@ -22,7 +22,7 @@ $ npm install @scenejs/effects
 
 ## 🛠️ How to use
 ```ts
-import { shake, flip, fadeIn, wipeIn } from "@egjs/effects";
+import { shake, flip, fadeIn, wipeIn } from "@scenejs/effects";
 
 Scene
     .shake()
