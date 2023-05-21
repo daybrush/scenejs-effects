@@ -1,6 +1,6 @@
 {
     "name": "@scenejs/effects",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Effect collection library where you can add effects with Scene.js",
     "main": "./dist/effects.cjs.js",
     "module": "./dist/effects.esm.js",
@@ -45,18 +45,19 @@
     },
     "homepage": "https://github.com/daybrush/scenejs-effects#readme",
     "dependencies": {
-        "@daybrush/utils": "^0.10.0",
-        "keyframer": "^0.1.0",
+        "@daybrush/utils": "^1.11.0",
+        "keyframer": "^0.1.1",
         "scenejs": "^1.1.0"
     },
     "devDependencies": {
-        "@daybrush/builder": "^0.1.0",
-        "@daybrush/jsdoc": "^0.3.7",
+        "@daybrush/builder": "^0.2.4",
+        "@daybrush/jsdoc": "^0.4.7",
         "@daybrush/release": "^0.2.4",
-        "daybrush-jsdoc-template": "^1.5.3",
+        "daybrush-jsdoc-template": "^1.10.0",
         "gh-pages": "^2.0.1",
-        "print-sizes": "0.0.4",
+        "print-sizes": "^0.2.0",
+        "tslib": "^2.5.2",
         "tslint": "^5.16.0",
-        "typescript": "^3.4.5"
+        "typescript": "^4.5.0"
     }
 }
